@@ -1,21 +1,21 @@
 <template>
   <div :style="{ backgroundImage: `url(${backgroundImg})` }" id="app">
     <div class="grid">
-      <Card v-for="(item, index) in items" 
-        :key="index" 
+      <Card v-for="(item, index) in enhancedItems"
+        :key="item.id"  
         :style="{ gridColumn: item.span ? `span ${item.span}` : '' }"
         :icon-src="item.icon"
         :hover-effect="item.hoverEffect"
         :clickable="item.clickable"
-        @click.native="toggleTile(index)"
+        @click.native="toggleTile(item.id)"
       >
         <template v-slot:line1>{{ item.line1 }}</template>
         <template v-slot:line2>{{ item.line2 }}</template>
         <template v-slot:line3>{{ item.line3 }}</template>
       </Card>
     </div>
-    <SlidingTile :is-visible="expandedIndex >= 0" @close="closeModal">
-      <p>{{ items[expandedIndex]?.expandedContent }}</p>
+    <SlidingTile :is-visible="expandedIndex !== -1" @close="closeModal">
+      <p v-if="expandedIndex !== -1">{{ items[expandedIndex].expandedContent }}</p>
     </SlidingTile>
   </div>
 </template>
@@ -26,6 +26,8 @@ import backgroundImg from '@/assets/paf.png';
 //components
 import Card from './components/Card.vue';
 import SlidingTile from './components/SlidingTile.vue';
+//data
+import items from '@/popupContent.json';
 //icons
 import infoIcon from '@/assets/info.png';
 import downloadIcon from '@/assets/download.png';
@@ -42,82 +44,56 @@ export default {
   },
   data() {
     return {
-      items: [
-        { line1: 'Eric Wursteisen',
-          line2: 'Strategic Advisor',
-          line3: 'Business Agility coach & mentor, Developer',
-          span: 2,
-          hoverEffect: false,
-          clickable: false,
-          expanded: false,
-          expandedContent:''
-        },
-        { line1: '', line2: 'About me',
-          icon: infoIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'More details about Eric Wursteisen'
-        },
-        { line1: '',
-          line2: 'Download CV (PDF)',
-          icon: downloadIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'CV download in progress'
-        },
-        { line1: '',
-          line2: 'Publications',
-          icon: publicationIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'More details about Publications'
-        },
-        { line1: '',
-          line2: 'Conferences',
-          icon: conferenceIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'More details about Conferences'
-        },
-        { line1: '',
-          line2: 'Projects',
-          icon: codeIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'More details about Projects'
-        },
-        { line1: '',
-          line2: 'Contact',
-          icon: contactIcon,
-          hoverEffect: true,
-          clickable: true,
-          expanded: false,
-          expandedContent: 'More details about Contacts'
-        },
-      ],
+      items,
       expandedIndex: -1,
-      // backgroundImg,
     };
   },
+  computed: {
+  enhancedItems() {
+      const iconMap = {
+        infoIcon,
+        downloadIcon,
+        contactIcon,
+        codeIcon,
+        publicationIcon,
+        conferenceIcon
+      };
+
+      return this.items.map(item => ({
+        ...item,
+        icon: iconMap[item.icon] // Maps the string identifier to the actual image import
+      }));
+    }
+  },
   methods: {
-    toggleTile(index) {
-      this.items.forEach((item, idx) => {
-        item.expanded = index === idx ? !item.expanded : false;
-      });
-      this.expandedIndex = this.items[index].expanded ? index : -1;
+    toggleTile(id) {
+      const item = this.enhancedItems.find(item => item.id === id);
+
+      if (item.downloadUrl) {
+        this.downloadFile(item.downloadUrl);
+        return; // Exit if a download is triggered
+      }
+
+      // Use the index of the item for expanding/collapsing logic
+      const index = this.enhancedItems.indexOf(item);
+      if (this.expandedIndex === index) {
+        this.expandedIndex = -1; // Close the popup if already open
+      } else {
+        this.expandedIndex = index; // Open the popup
+      }
+    },
+    downloadFile(url) {
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'CV_EW_FR.pdf');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     },
     closeModal() {
-      if (this.expandedIndex !== -1) {
-        this.items[this.expandedIndex].expanded = false;
-        this.expandedIndex = -1;
-      }
+      this.expandedIndex = -1;
     }
-  }
+  },
 };
 </script>
 
