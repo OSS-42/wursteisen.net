@@ -33,6 +33,7 @@ import contactIcon from '@/assets/arroba.png';
 import codeIcon from '@/assets/code.png';
 import publicationIcon from '@/assets/write.png';
 import conferenceIcon from '@/assets/speech.png';
+import translateIcon from '@/assets/translation.png';
 
 export default {
   name: 'App',
@@ -54,7 +55,8 @@ export default {
         contactIcon,
         codeIcon,
         publicationIcon,
-        conferenceIcon
+        conferenceIcon,
+        translateIcon
       };
 
       return this.items.map(item => ({

@@ -65,7 +65,7 @@
 	{ "id":"7",
 	  "line1": "",
 	  "line2": "Language",
-	  "icon": "contactIcon",
+	  "icon": "translateIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
 	  "expanded": false,

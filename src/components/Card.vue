@@ -39,8 +39,8 @@
 	methods: {
     handleClick() {
       if (this.clickable && this.onClick) {
-        console.log("Tile clicked");  // Confirming click handler works
-        this.onClick();  // Call the provided onClick method
+        console.log("Tile clicked");
+        this.onClick();
       }
     }
   }
