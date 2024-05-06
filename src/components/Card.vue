@@ -30,6 +30,10 @@
 			type: Function,
 			default: null
 		},
+		id: {
+			type: String,
+			required: true
+		},
 	},
 	data() {
 		return {
@@ -37,13 +41,16 @@
 		};
 	},
 	methods: {
-    handleClick() {
-      if (this.clickable && this.onClick) {
-        console.log("Tile clicked");
-        this.onClick();
-      }
-    }
-  }
+		handleClick() {
+		if (this.clickable) {
+			console.log("Tile clicked");
+			this.$emit('click');
+		}
+		if (this.id === '7') { // Language switch tile
+			this.$emit('switchLanguage');
+		}
+		}
+	}
   };
   </script>
   

@@ -68,7 +68,6 @@
 	  "icon": "translateIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
-	  "expanded": false,
-	  "expandedContent": "Change language"
+	  "expanded": false
 	}
   ]

@@ -2,17 +2,18 @@
   <div id="app">
     <div class="grid">
       <Card v-for="(item, index) in enhancedItems"
-        :key="item.id"  
-        :style="{ gridColumn: item.span ? `span ${item.span}` : '' }"
-        :icon-src="item.icon"
-        :hover-effect="item.hoverEffect"
-        :clickable="item.clickable"
-        @click.native="toggleTile(item.id)"
-      >
-        <template v-slot:line1>{{ item.line1 }}</template>
-        <template v-slot:line2>{{ item.line2 }}</template>
-        <template v-slot:line3>{{ item.line3 }}</template>
-      </Card>
+          :key="item.id"
+          :id="item.id"
+          :style="{ gridColumn: item.span ? `span ${item.span}` : '' }"
+          :icon-src="item.icon"
+          :hover-effect="item.hoverEffect"
+          :clickable="item.clickable"
+          @click.native="toggleTile(item.id)"
+          @switchLanguage="switchLanguage">
+      <template v-slot:line1>{{ item.line1 }}</template>
+      <template v-slot:line2>{{ item.line2 }}</template>
+      <template v-slot:line3>{{ item.line3 }}</template>
+    </Card>
     </div>
     <SlidingTile :is-visible="expandedIndex !== -1" @close="closeModal">
       <p v-if="expandedIndex !== -1">{{ items[expandedIndex].expandedContent }}</p>
@@ -25,7 +26,7 @@
 import Card from './components/Card.vue';
 import SlidingTile from './components/SlidingTile.vue';
 //data
-import items from '@/popupContent.json';
+// import items from '@/popupContent.json';
 //icons
 import infoIcon from '@/assets/info.png';
 import downloadIcon from '@/assets/download.png';
@@ -37,14 +38,19 @@ import translateIcon from '@/assets/translation.png';
 
 export default {
   name: 'App',
+  mounted() {
+    console.log("Mounted hook called");
+    this.switchLanguage(this.currentLanguage);
+  },
   components: {
     Card,
     SlidingTile
   },
   data() {
     return {
-      items,
+      items: [],
       expandedIndex: -1,
+      currentLanguage: 'en'
     };
   },
   computed: {
@@ -61,8 +67,10 @@ export default {
 
       return this.items.map(item => ({
         ...item,
-        icon: iconMap[item.icon] // Maps the string identifier to the actual image import
+        icon: iconMap[item.icon]
       }));
+      console.log("Processed item:", enhancedItem); // Check the structure
+      return enhancedItem;
     }
   },
   methods: {
@@ -92,6 +100,16 @@ export default {
     },
     closeModal() {
       this.expandedIndex = -1;
+    },
+    switchLanguage() {
+      this.currentLanguage = this.currentLanguage === 'en' ? 'fr' : 'en';
+      import(`@/locales/${this.currentLanguage}.json`)
+        .then(module => {
+          this.items = module.default;
+          console.log("Language switched to:", this.currentLanguage);
+        }).catch(error => {
+          console.error("Failed to load language file:", error);
+        });
     }
   },
 };
