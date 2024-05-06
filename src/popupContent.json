@@ -61,5 +61,14 @@
 	  "clickable": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Contacts"
+	},
+	{ "id":"7",
+	  "line1": "",
+	  "line2": "Language",
+	  "icon": "contactIcon",
+	  "hoverEffect": true,
+	  "clickable": true,
+	  "expanded": false,
+	  "expandedContent": "Change language"
 	}
   ]

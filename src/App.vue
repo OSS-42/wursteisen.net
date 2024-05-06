@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ backgroundImage: `url(${backgroundImg})` }" id="app">
+  <div id="app">
     <div class="grid">
       <Card v-for="(item, index) in enhancedItems"
         :key="item.id"  
@@ -21,8 +21,6 @@
 </template>
 
 <script>
-//background
-import backgroundImg from '@/assets/paf.png';
 //components
 import Card from './components/Card.vue';
 import SlidingTile from './components/SlidingTile.vue';
