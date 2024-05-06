@@ -39,7 +39,6 @@ import translateIcon from '@/assets/translation.png';
 export default {
   name: 'App',
   mounted() {
-    console.log("Mounted hook called");
     this.switchLanguage(this.currentLanguage);
   },
   components: {
