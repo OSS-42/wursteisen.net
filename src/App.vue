@@ -15,16 +15,16 @@
       <template v-slot:line3>{{ item.line3 }}</template>
     </Card>
     </div>
-    <SlidingTile :is-visible="expandedIndex !== -1" @close="closeModal">
-      <p v-if="expandedIndex !== -1">{{ items[expandedIndex].expandedContent }}</p>
-    </SlidingTile>
+    <expandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
+      <p v-if="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent">{{ items[expandedIndex].expandedContent }}</p>
+    </expandingTile>
   </div>
 </template>
 
 <script>
 //components
 import Card from './components/Card.vue';
-import SlidingTile from './components/SlidingTile.vue';
+import expandingTile from './components/ExpandingTile.vue';
 //data
 // import items from '@/popupContent.json';
 //icons
@@ -43,7 +43,7 @@ export default {
   },
   components: {
     Card,
-    SlidingTile
+    expandingTile
   },
   data() {
     return {

@@ -6,14 +6,15 @@
 	  "span": 2,
 	  "hoverEffect": false,
 	  "clickable": false,
-	  "expanded": false,
-	  "expandedContent":""
+	  "hasExpandedContent": false,
+	  "expanded": false
 	},
 	{ "id":"1",
 	  "line1": "", "line2": "About me",
 	  "icon": "infoIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Eric Wursteisen"
 	},
@@ -23,6 +24,7 @@
 	  "icon": "downloadIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "downloadUrl": "/CV_EW_FR.pdf"
 	},
@@ -32,6 +34,7 @@
 	  "icon": "publicationIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Publications"
 	},
@@ -41,6 +44,7 @@
 	  "icon": "conferenceIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Conferences"
 	},
@@ -50,6 +54,7 @@
 	  "icon": "codeIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Projects"
 	},
@@ -59,6 +64,7 @@
 	  "icon": "contactIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": true,
 	  "expanded": false,
 	  "expandedContent": "More details about Contacts"
 	},
@@ -68,6 +74,7 @@
 	  "icon": "translateIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
+	  "hasExpandedContent": false,
 	  "expanded": false
 	}
   ]

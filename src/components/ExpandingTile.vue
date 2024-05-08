@@ -9,7 +9,7 @@
   
 <script>
 	export default {
-	name: "SlidingTile",
+	name: "expandingTile",
 	props: {
 		isVisible: Boolean
 	},
