@@ -43,7 +43,7 @@
   
   .modal-content {
 	position: relative;
-	background-color: #5b5b5b;
+	background: linear-gradient(to right, #180353, #295ff4);
 	border-radius: 5px;
 	padding: 20px;
 	font-family: Urbanist;

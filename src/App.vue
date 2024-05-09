@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import { markRaw } from 'vue';
 //components
 import Card from './components/Card.vue';
 import ExpandingTile from './components/ExpandingTile.vue';
@@ -95,7 +96,7 @@ export default {
       }
       import(`./components/${componentName}.vue`)
         .then(comp => {
-          this.currentComponent = comp.default;
+          this.currentComponent = markRaw(comp.default);
         })
         .catch(error => {
           console.error('Failed to load component:', error);
