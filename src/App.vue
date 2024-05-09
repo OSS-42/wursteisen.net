@@ -2,31 +2,30 @@
   <div id="app">
     <div class="grid">
       <Card v-for="(item, index) in enhancedItems"
-          :key="item.id"
-          :id="item.id"
-          :style="{ gridColumn: item.span ? `span ${item.span}` : '' }"
-          :icon-src="item.icon"
-          :hover-effect="item.hoverEffect"
-          :clickable="item.clickable"
-          @click.native="toggleTile(item.id)"
-          @switchLanguage="switchLanguage">
+        :key="item.id"
+        :id="item.id"
+        :style="{ gridColumn: item.span ? `span ${item.span}` : '' }"
+        :icon-src="item.icon"
+        :hover-effect="item.hoverEffect"
+        :clickable="item.clickable"
+        @click="toggleTile(item.id)"
+        @switchLanguage="switchLanguage">
       <template v-slot:line1>{{ item.line1 }}</template>
       <template v-slot:line2>{{ item.line2 }}</template>
       <template v-slot:line3>{{ item.line3 }}</template>
     </Card>
     </div>
-    <expandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
-      <p v-if="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent">{{ items[expandedIndex].expandedContent }}</p>
-    </expandingTile>
+    <ExpandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
+      <component :is="currentComponent" v-if="currentComponent"></component>
+    </ExpandingTile>
   </div>
 </template>
 
 <script>
 //components
 import Card from './components/Card.vue';
-import expandingTile from './components/ExpandingTile.vue';
-//data
-// import items from '@/popupContent.json';
+import ExpandingTile from './components/ExpandingTile.vue';
+import AboutMeEN from './components/AboutMeEN.vue';
 //icons
 import infoIcon from '@/assets/info.png';
 import downloadIcon from '@/assets/download.png';
@@ -43,17 +42,19 @@ export default {
   },
   components: {
     Card,
-    expandingTile
+    ExpandingTile, 
+    AboutMeEN
   },
   data() {
     return {
       items: [],
       expandedIndex: -1,
-      currentLanguage: 'en'
+      currentLanguage: 'en',
+      currentComponent: null
     };
   },
   computed: {
-  enhancedItems() {
+    enhancedItems() {
       const iconMap = {
         infoIcon,
         downloadIcon,
@@ -63,31 +64,43 @@ export default {
         conferenceIcon,
         translateIcon
       };
-
       return this.items.map(item => ({
         ...item,
         icon: iconMap[item.icon]
       }));
-      console.log("Processed item:", enhancedItem); // Check the structure
-      return enhancedItem;
     }
   },
   methods: {
     toggleTile(id) {
       const item = this.enhancedItems.find(item => item.id === id);
-
-      if (item.downloadUrl) {
-        this.downloadFile(item.downloadUrl);
-        return; // Exit if a download is triggered
+      if (!item.hasExpandedContent) {
+        this.expandedIndex = -1;
+        this.currentComponent = null;
+        return;
       }
 
-      // Use the index of the item for expanding/collapsing logic
       const index = this.enhancedItems.indexOf(item);
       if (this.expandedIndex === index) {
-        this.expandedIndex = -1; // Close the popup if already open
+        this.expandedIndex = -1;
+        this.currentComponent = null;
       } else {
-        this.expandedIndex = index; // Open the popup
+        this.expandedIndex = index;
+        this.loadComponent(item.componentName);
       }
+    },
+    loadComponent(componentName) {
+      if (!componentName) {
+        this.currentComponent = null;
+        return;
+      }
+      import(`./components/${componentName}.vue`)
+        .then(comp => {
+          this.currentComponent = comp.default;
+        })
+        .catch(error => {
+          console.error('Failed to load component:', error);
+          this.currentComponent = null;
+        });
     },
     downloadFile(url) {
       const link = document.createElement('a');

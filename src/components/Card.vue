@@ -7,10 +7,9 @@
 			<p class="line-two"><slot name="line3"></slot></p>
 		</div>
 	</div>
-  </template>
+</template>
   
-  <script>
-
+<script>
   export default {
 	name: 'Card',
 	props: {
@@ -52,9 +51,9 @@
 		}
 	}
   };
-  </script>
+</script>
   
-  <style scoped>
+<style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"');
   @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"');
 
@@ -107,5 +106,5 @@
 	font-family: Urbanist;
 	font-weight: 100;
   }
-  </style>
+</style>
   
