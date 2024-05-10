@@ -5,20 +5,20 @@
             <div class="publications-text">
                 <h2>{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
-            </div>
-        </div>
-        <div v-for="yearPub in publications" :key="yearPub.year">
-            <h3 @click="yearPub.isVisible = !yearPub.isVisible">
-                <span :class="{ 'arrow': true, 'down': yearPub.isVisible }"> > </span>
-                {{ yearPub.year }}
-            </h3>
-            <transition name="fade">
-                <ul v-show="yearPub.isVisible">
-                    <li v-for="article in yearPub.articles" :key="article.title">
-                        <a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
-                    </li>
-                </ul>
-            </transition>
+				<div v-for="yearPub in publications" :key="yearPub.year">
+					<h3 @click="yearPub.isVisible = !yearPub.isVisible">
+						<span :class="{ 'arrow': true, 'down': yearPub.isVisible }"> > </span>
+						{{ yearPub.year }}
+					</h3>
+					<transition name="fade">
+						<ul v-show="yearPub.isVisible">
+							<li v-for="article in yearPub.articles" :key="article.title">
+								<a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+							</li>
+						</ul>
+					</transition>
+				</div>
+			</div>
         </div>
     </div>
 </template>

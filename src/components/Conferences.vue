@@ -5,20 +5,20 @@
             <div class="conferences-text">
                 <h2>{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
-            </div>
-        </div>
-        <div v-for="yearConf in conferences" :key="yearConf.year">
-            <h3 @click="yearConf.isVisible = !yearConf.isVisible">
-                <span :class="{ 'arrow': true, 'down': yearConf.isVisible }"> > </span>
-                {{ yearConf.year }}
-            </h3>
-            <transition name="fade">
-                <ul v-show="yearConf.isVisible">
-                    <li v-for="article in yearConf.speeches" :key="article.title">
-                        <a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
-                    </li>
-                </ul>
-            </transition>
+				<div v-for="yearConf in conferences" :key="yearConf.year">
+					<h3 @click="yearConf.isVisible = !yearConf.isVisible">
+						<span :class="{ 'arrow': true, 'down': yearConf.isVisible }"> > </span>
+						{{ yearConf.year }}
+					</h3>
+					<transition name="fade">
+						<ul v-show="yearConf.isVisible">
+							<li v-for="article in yearConf.speeches" :key="article.title">
+								<a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+							</li>
+						</ul>
+					</transition>
+				</div>
+			</div>
         </div>
     </div>
 </template>
@@ -106,8 +106,8 @@
 <style scoped>
 .header-content {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    margin-bottom: 20px; /* Space between header and list of years */
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .profile-img {
