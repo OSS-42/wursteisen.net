@@ -13,8 +13,8 @@
 		name: 'AboutMe',
 		props: {
 			currentLanguage: {
-			type: String,
-			default: 'en'
+				type: String,
+				default: 'en'
 			}
 		},
 		data() {
