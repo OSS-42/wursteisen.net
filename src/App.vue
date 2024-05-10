@@ -16,7 +16,7 @@
     </Card>
     </div>
     <ExpandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
-      <component :is="currentComponent" v-if="currentComponent"></component>
+      <component :is="currentComponent" :current-language="currentLanguage" v-if="currentComponent"></component>
     </ExpandingTile>
   </div>
 </template>
@@ -97,6 +97,7 @@ export default {
       import(`./components/${componentName}.vue`)
         .then(comp => {
           this.currentComponent = markRaw(comp.default);
+          // Here we can't directly modify props like this. We need to ensure the currentComponent is aware of props via template binding.
         })
         .catch(error => {
           console.error('Failed to load component:', error);
@@ -116,10 +117,10 @@ export default {
     },
     switchLanguage() {
       this.currentLanguage = this.currentLanguage === 'en' ? 'fr' : 'en';
+      console.log("Switching language to:", this.currentLanguage);
       import(`@/locales/${this.currentLanguage}.json`)
         .then(module => {
           this.items = module.default;
-          console.log("Language switched to:", this.currentLanguage);
         }).catch(error => {
           console.error("Failed to load language file:", error);
         });

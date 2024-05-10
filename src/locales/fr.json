@@ -16,7 +16,7 @@
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "expandedContent": "Plus de détails à propos d'Eric Wursteisen"
+	  "componentName": "AboutMe"
 	},
 	{ "id":"2",
 	  "line1": "",
