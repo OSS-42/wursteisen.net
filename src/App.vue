@@ -26,7 +26,7 @@ import { markRaw } from 'vue';
 //components
 import Card from './components/Card.vue';
 import ExpandingTile from './components/ExpandingTile.vue';
-import AboutMeEN from './components/AboutMeEN.vue';
+import AboutMe from './components/AboutMe.vue';
 //icons
 import infoIcon from '@/assets/info.png';
 import downloadIcon from '@/assets/download.png';
@@ -44,7 +44,7 @@ export default {
   components: {
     Card,
     ExpandingTile, 
-    AboutMeEN
+    AboutMe
   },
   data() {
     return {
