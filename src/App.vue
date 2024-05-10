@@ -99,7 +99,6 @@ export default {
       import(`./components/${componentName}.vue`)
         .then(comp => {
           this.currentComponent = markRaw(comp.default);
-          // Here we can't directly modify props like this. We need to ensure the currentComponent is aware of props via template binding.
         })
         .catch(error => {
           console.error('Failed to load component:', error);

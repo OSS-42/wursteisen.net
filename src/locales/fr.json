@@ -46,7 +46,7 @@
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "expandedContent": "Plus de détails à propos des Conférences"
+	  "componentName": "Conferences"
 	},
 	{ "id":"5",
 	  "line1": "",

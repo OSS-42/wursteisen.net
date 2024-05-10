@@ -1,6 +1,6 @@
 <template>
 	<div class="about-me-container">
-	  <img src="@/assets/perso.jpeg" alt="Profile Image" class="profile-img">
+	  <img src="@/assets/perso2.png" alt="Profile Image" class="profile-img">
 	  <div class="about-me-text">
 		<h2>{{ localizedText.title }}</h2>
 		<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>

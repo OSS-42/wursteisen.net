@@ -1,9 +1,12 @@
 <template>
     <div class="publications-container">
-		<div class="publications-text">
-		<h2>{{ localizedText.title }}</h2>
-			<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
-		</div>
+		<div class="header-content">
+            <img src="@/assets/perso2.png" alt="Profile Image" class="profile-img">
+            <div class="publications-text">
+                <h2>{{ localizedText.title }}</h2>
+                <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
+            </div>
+        </div>
         <div v-for="yearPub in publications" :key="yearPub.year">
             <h3 @click="yearPub.isVisible = !yearPub.isVisible">
                 <span :class="{ 'arrow': true, 'down': yearPub.isVisible }"> > </span>
@@ -140,6 +143,20 @@
 </script>
 
 <style scoped>
+.header-content {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 20px; /* Space between header and list of years */
+}
+
+.profile-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 20px;
+}
+
 .publications-text {
 	flex: 1;
 	text-align: left;
