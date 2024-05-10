@@ -36,7 +36,7 @@
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "expandedContent": "Plus de détails à propos des Publications"
+	  "componentName": "Publications"
 	},
 	{ "id":"4",
 	  "line1": "",
