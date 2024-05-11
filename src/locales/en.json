@@ -20,13 +20,13 @@
 	},
 	{ "id":"2",
 	  "line1": "",
-	  "line2": "Download CV (PDF)",
-	  "icon": "downloadIcon",
+	  "line2": "Experiences",
+	  "icon": "workIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "downloadUrl": "/CV_EW_FR.pdf"
+	  "componentName": "WorkXP"
 	},
 	{ "id":"3",
 	  "line1": "",
@@ -60,13 +60,13 @@
 	},
 	{ "id":"6",
 	  "line1": "",
-	  "line2": "Contact",
-	  "icon": "contactIcon",
+	  "line2": "Download CV (PDF)",
+	  "icon": "downloadIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "expandedContent": "More details about Contacts"
+	  "downloadUrl": "/CV_EW_FR.pdf"
 	},
 	{ "id":"7",
 	  "line1": "",

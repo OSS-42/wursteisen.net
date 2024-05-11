@@ -36,6 +36,7 @@ import codeIcon from '@/assets/code.png';
 import publicationIcon from '@/assets/write.png';
 import conferenceIcon from '@/assets/speech.png';
 import translateIcon from '@/assets/translation.png';
+import workIcon from '@/assets/performance.png';
 
 export default {
   name: 'App',
@@ -44,9 +45,7 @@ export default {
   },
   components: {
     Card,
-    ExpandingTile, 
-    // AboutMe,
-    // Publications
+    ExpandingTile,
   },
   data() {
     return {
@@ -65,7 +64,8 @@ export default {
         codeIcon,
         publicationIcon,
         conferenceIcon,
-        translateIcon
+        translateIcon,
+        workIcon
       };
       return this.items.map(item => ({
         ...item,
@@ -154,8 +154,8 @@ export default {
   transition: all 0.5s ease;
 }
 
-.slide-enter, .slide-leave-to /* ending state for leaving */ {
+.slide-enter, .slide-leave-to {
   opacity: 0;
-  transform: translateY(-20px); /* Adjust based on your design */
+  transform: translateY(-20px);
 }
 </style>

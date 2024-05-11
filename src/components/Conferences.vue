@@ -38,17 +38,15 @@
 					en: {
 						title: "Conferences",
 						paragraphs: [
-							"It is always a pleasure to find ideas to write about, especially when it allows me to share pertinent experiences, questionnings or accomplishments.",
-							"I am mostly writing in french (and starting to write in english too).",
-							"You can find some of my articles by visiting the following links.",
+							"From time to time, I also enjoy being in presentation mode, so I give talks or 'Lunch & Learn' sessions.",
+							"You can find some of my presentations by clicking on the links below.",
 						]
 					},
 					fr: {
 						title: "Conférences",
 						paragraphs: [
-							"C'est toujours un plaisir de trouver des idées sur lesquelles écrire, notamment lorsque cela me permet de partager des expériences pertinentes, des questionnements ou encore des accomplissements.",
-							"J'écris principalement en français (mais j'écris de plus en plus en anglais également).",
-							"Vous pouvez trouver quelques un des mes billets en cliquant sur les liens ci-dessous.",
+							"De temps à autres, j'aime également me retrouver en mode présentation, je fais donc des conférences ou \'Lunch & Learn\'.",
+							"Vous pouvez trouver quelques unes de mes prestations en cliquant sur les liens ci-dessous.",
 						]
 					}
 				},
@@ -57,22 +55,22 @@
 						year: 2024,
 						isVisible: false,
 						speeches: [
-							{ title: "Pour un développement optimisé, pensons architecture et découpage, à 42 Québec"},
+							{ title: "Pour un développement optimisé, pensons architecture et découpage (FR), 42 Québec"},
 						]
 					},
 					{
 						year: 2023,
 						isVisible: false,
 						speeches: [
-							{ title: "La gestion des conflits (FR), à 42 Québec"},
-							{ title: "Agile 101 (FR), à 42 Québec"}
+							{ title: "La gestion des conflits (FR), 42 Québec"},
+							{ title: "Agile 101 (FR), 42 Québec"}
 						]
 					},
 					{
 						year: 2022,
 						isVisible: false,
 						speeches: [
-							{ title: "Agile 101 (FR), à 42 Québec"},
+							{ title: "Agile 101 (FR), 42 Québec"},
 						]
 					},
 					{
