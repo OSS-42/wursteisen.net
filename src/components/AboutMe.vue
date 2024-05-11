@@ -9,18 +9,18 @@
                 </div>
                 <div class="education">
                     <h2>{{ localizedText.title2 }}</h2>
-					<p>{{  localizedText.line }}</p>
                     <div class="education-logos">
-                        <div v-for="(edu, index) in educations" :key="index">
+                        <div class="education-entry" v-for="(edu, index) in educations" :key="index">
                             <img :src="edu.img" :alt="edu.alt" class="educ-img" @click="toggleVisibility(edu)">
-                            <p v-if="edu.isVisible">{{ edu.description[currentLanguage] }}</p>
                         </div>
                     </div>
+                    <p v-if="visibleEducation" class="education-description">{{ visibleEducation.description[currentLanguage] }}</p>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
 
 <script>
 import image42 from '@/assets/42.png';
@@ -38,6 +38,7 @@ export default {
     },
     data() {
         return {
+			visibleEducation: null,
             translations: {
                 en: {
                     title: "About Eric Wursteisen",
@@ -74,12 +75,12 @@ export default {
                     },
                     isVisible: false
                 },
-                {
-                    img: imageEsiee,
-                    alt: "ESIEE Management",
+				{
+                    img: imagePmi,
+                    alt: "PMI",
                     description: {
-                        en: "2006 - Master in Innovation Management, biotechnology and bioinformatics",
-                        fr: "2006 - Grade de Maîtrise en Management de l'Innovation, biotechnologies et biofinformatique."
+                        en: "2022-2024 - Agile certifications in the context of Disciplined Agile: DAVSC, DAC, DASSM",
+                        fr: "2022-2024 - Certifications agiles avec le contexte Disciplined Agile : DAVSC, DAC, DASSM"
                     },
                     isVisible: false
                 },
@@ -93,50 +94,52 @@ export default {
                     isVisible: false
                 },
                 {
-                    img: imagePmi,
-                    alt: "PMI",
+                    img: imageEsiee,
+                    alt: "ESIEE Management",
                     description: {
-                        en: "2022-2024 - Agile certifications in the context of Disciplined Agile: DAVSC, DAC, DASSM",
-                        fr: "2022-2024 - Certifications agiles avec le contexte Disciplined Agile : DAVSC, DAC, DASSM"
+                        en: "2006 - Master in Innovation Management, biotechnology and bioinformatics",
+                        fr: "2006 - Grade de Maîtrise en Management de l'Innovation, biotechnologies et biofinformatique."
                     },
                     isVisible: false
                 }
             ]
         };
     },
+	methods: {
+        toggleVisibility(education) {
+            this.visibleEducation = (this.visibleEducation === education) ? null : education;
+        }
+    },
     computed: {
         localizedText() {
             return this.translations[this.currentLanguage] || this.translations.en;
-        }
-    },
-    methods: {
-        toggleVisibility(education) {
-            education.isVisible = !education.isVisible;
         }
     }
 }
 </script>
 
 <style scoped>
-	.education {
-		flex: 1;
-		text-align: left;
-		font-family: Urbanist;
-		font-size: 15px;
-		margin-top: 20px;
-	}
+	.education-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 
-	.educ-img {
-		height: 30px;
-		margin-right: 20px;
-		cursor: pointer; /* Makes it clear that the images are clickable */
-	}
+    .education-entry {
+        margin-right: 20px; /* Spacing between logos */
+        cursor: pointer;
+    }
 
-	.education-logos div {
-		display: flex;
-		text-align: center; /* Center-align the images and text */
-		margin-bottom: 20px; /* Space between education entries */
-	}
+    .educ-img {
+        width: 120px; /* Fixed width for each logo */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .education-description {
+        width: 100%; /* Full width of the container */
+        text-align: center;
+        margin-top: 10px; /* Space after logos */
+    }
 
 	.about-me-container {
 		display: flex;
@@ -164,7 +167,7 @@ export default {
 		flex-direction: column;
 	}
 
-	.about-me-text, .education {
+	.about-me-text {
 		flex: 1;
 		text-align: left;
 		font-family: Urbanist;
