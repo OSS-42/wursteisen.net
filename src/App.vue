@@ -26,8 +26,6 @@ import { markRaw } from 'vue';
 //components
 import Card from './components/Card.vue';
 import ExpandingTile from './components/ExpandingTile.vue';
-// import AboutMe from './components/AboutMe.vue';
-// import Publications from './components/Publications.vue';
 //icons
 import infoIcon from '@/assets/info.png';
 import downloadIcon from '@/assets/download.png';
