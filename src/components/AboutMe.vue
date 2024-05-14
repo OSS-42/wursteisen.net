@@ -1,7 +1,7 @@
 <template>
     <div class="about-me-container">
         <div class="header-content">
-            <img src="@/assets/perso2.png" alt="Profile Image" class="profile-img">
+            <img src="@/assets/perso2-expo.png" alt="Profile Image" class="profile-img">
             <div class="text-content">
                 <div class="about-me-text">
                     <h2>{{ localizedText.title }}</h2>

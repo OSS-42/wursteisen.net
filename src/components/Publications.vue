@@ -1,7 +1,7 @@
 <template>
     <div class="publications-container">
 		<div class="header-content">
-            <img src="@/assets/perso2.png" alt="Profile Image" class="profile-img">
+            <img src="@/assets/perso2-expo.png" alt="Profile Image" class="profile-img">
             <div class="publications-text">
                 <h2>{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
