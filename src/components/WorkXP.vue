@@ -14,8 +14,10 @@
                             <img :src="work.img" :alt="work.alt" class="work-img" @click="toggleVisibility(work)">
                         </div>
                     </div>
-                    <p v-if="visibleWork" class="work-description">{{ visibleWork.description[currentLanguage] }}</p>
-                </div>
+                    <div v-if="visibleWork" class="work-description">
+						<p v-for="(desc, descIndex) in visibleWork.description[currentLanguage]" :key="descIndex">{{ desc }}</p>
+					</div>
+				</div>
             </div>
         </div>
     </div>
@@ -50,16 +52,14 @@ export default {
                 en: {
                     title: "My work experiences",
                     paragraphs: [
-                        "Stay tuned!"
-                    ],
-					line: "Click on a logo to discover a bit more about my work experiences!"
+                        "click on a logo to discover more about my experience."
+                    ]
                 },
                 fr: {
                     title: "Mes expériences de travail",
                     paragraphs: [
-                        "Restez à l'écoute !"
-                    ],
-					line: "Cliquez sur un logo pour y découvrir un peu plus sur mes expériences de travail !"
+                        "Cliquez sur un logo pour en savoir plus sur mon expérience."
+                    ]
                 }
             },
             experiences: [
@@ -67,7 +67,13 @@ export default {
                     img: fujitsu,
                     alt: "Fujitsu North America",
                     description: {
-                        en: "2012-2014 - Common Core completion. Learnings in C, C++ and typescript",
+                        en: [
+							"2012-2014 - It was at this time that I discovered that I was not a traditional project manager.",
+							"Nor was I a Scrum Master since I had just discovered agility.",
+							"I was in transition, in between. After a project in a public organization, I took the reins of a division of the Near Shore Delivery Center (NSDC).",
+							"During this period as 'Factory Manager', I let the team find their own solutions to application compatibility issues while I mainly handled budget and scheduling aspects.",
+							"The team succeeded in being recognized for its successes due to its efficiency and ability to secure several contracts in succession.",
+						],
                         fr: [
 							"2012-2014 - C'est à ce moment que j'ai découvert que je n'étais pas un chargé de projet tradionnel.",
 							"Mais je n'étais pas plus un Scrum Master puisque je venais tout juste de découvrir l'agilité.",
@@ -82,7 +88,15 @@ export default {
                     img: nurun, publicis,
                     alt: "Nurun Service Conseil/Groupe Publicis",
                     description: {
-                        en: "2014-2016 - Agile certifications in the context of Disciplined Agile: DAVSC, DAC, DASSM",
+                        en: [
+							"2014-2016 - With the two roles, project manager and Scrum Master, I had to guide teams on several projects.",
+							"Clients were either private or public organizations.",
+							"The challenges I faced included having 'agile' teams while the organization's reporting was not.",
+							"I also had to turn around projects that were financially struggling, which I successfully accomplished.",
+							"What I am most proud of during this period was having the chance to build a team core and an environment in which these team members could grow and support each other.",
+							"A sense of self-organization existed. And we had a lot of fun while being effective.",
+							"Customer feedback was excellent with this team."
+						],
                         fr: [
 							"2014-2016 - Avec les 2 rôles, gestionnaire de projet et Scrum Master, je devais guider des équipes sur plusieurs projets.",
 							"Les clients étaient soit des organisations privées soit publiques.",
@@ -99,7 +113,12 @@ export default {
                     img: logibec,
                     alt: "Logibec",
                     description: {
-                        en: "2016-2017 - Master in Business Administration, Internationl Management of Companies",
+                        en: [
+							"2016-2017 - I joined Logibec as a permanent employee to change from my past experiences as a consultant.",
+							"Initially as a Scrum Master for a single development team, I quickly succeeded in introducing Kanban and Scrum concepts to the entire Quebec office.",
+							"All individuals, both in development and customer service, experienced changes.",
+							"I was also part of an organizational transformation at Logibec, as a 'Change Agent' to help the company achieve one of its goals, to become a 'TEAL' organization."
+						],
                         fr: [
 							"2016-2017 - J'ai rejoint Logibec comme un employé permanent pour changer de mes expériences passées à titre de consultant.",
 							"D'abord en tant que Scrum Master pour une seule équipe de développement, j'ai rapidement réussi à introduire des concepts Kanban et Scrum à l'ensemble du bureau de Québec.",
@@ -113,7 +132,15 @@ export default {
                     img: agileqc, agiletr,
                     alt: "Agile Québec",
                     description: {
-                        en: ["2016-2018 - Master in Innovation Management, biotechnology and bioinformatics",],
+                        en: [
+							"2016-2018 - In 2016 I joined the board of directors of Agile Québec.",
+							"It was a great opportunity for me to immerse myself in the Agile community of Quebec and the province.",
+							"This also allowed me to create relationships with international speakers.",
+							"As a board member, I was in charge of partnerships, both for the organization's annual plan and for the highly anticipated Agile Tour event.",
+							"This annual event attracts nearly 1000 participants each year.",
+							"It consists of a day of several conferences during which speakers present new concepts, share their experiences and knowledge with their peers and newcomers.",
+							"You can learn more by visiting www.agilequebec.ca."
+						],
                         fr: [
 							"2016-2018 - En 2016 j'ai rejoint le conseil d'administration d'Agile Québec.",
 							"Il s'agissait pour moi d'une belle opportunité pour m'immerger dans la communauté Agile de Québec et de la Province.",
@@ -130,7 +157,12 @@ export default {
                     img: facilite, cgi,
                     alt: "Facilité Informatique/CGI",
                     description: {
-                        en: "2017-2019 - Master in Innovation Management, biotechnology and bioinformatics",
+                        en: [
+							"2017-2019 - I coached several teams, using either Scrum or Kanban, depending on the business units I interacted with.",
+							"All teams were able to reduce their time to deliver new features.",
+							"With actions focused on collaboration, some teams managed to come closer together, especially the one consisting of business people located in Mississauga, ON.",
+							"The main success was the introduction of Upstream Kanban concepts which had a major impact for this team."
+						],
                         fr: [
 							"2017-2019 - Je coache plusieurs équipes, qui utilisent ou Scrum ou Kanban, dépendamment des unités d'affaires avec lesquelles j'interagis.",
 							"Toutes les équipes ont été en mesure de réduire leur temps de livraison de nouvelles fonctionnalités.",
@@ -144,7 +176,12 @@ export default {
                     img: momentum,
                     alt: "Momentum Technologies",
                     description: {
-                        en: "2019-2020 - Master in Innovation Management, biotechnology and bioinformatics",
+                        en: [
+							"2019-2020 - I decided to take on the challenge of helping set up the remote development center at Momentum.",
+							"Our goal is to assist organizations to thrive in the context of a labor shortage in the IT industry.",
+							"Some clients are already experiencing our ability to support them in developing their products, thanks to our team based in Tunis.",
+							"I also continue my role as an agile coach and help my organization develop its own agility."
+						],
                         fr: [
 							"2019-2020 - J'ai décidé de relever le défi d'aider à mettre en place et rendre fonctionnel le centre de développement à distance de Momentum.",
 							"Notre objectif est d'aider les organisations à prospérer dans le contexte de pénurie de main-d'œuvre dans l'industrie informatique.",
@@ -158,7 +195,13 @@ export default {
                     img: pragsix,
                     alt: "Pragsix Inc.",
                     description: {
-                        en: "2020-2023 - Master in Innovation Management, biotechnology and bioinformatics",
+                        en: [
+							"2020-2023 - Through various mandates, I continued my coaching journey.",
+							"I recruited, coached, and mentored individuals in their progression to become Scrum Masters.",
+							"I also coached and mentored Executives to ensure that the vision, mission, and strategic objectives were aligned and highly engaging for the rest of the organization.",
+							"I also provided certified training for the Project Management Institute (pmi.org)'s certifications, after obtaining the DASSM and DAC certifications myself.",
+							"The highlight of this very enriching experience was working with the executive team of Micrologic, to help them take a step in their growth."
+						],
                         fr: [
 							"2020-2023 - À travers différents mandats j'ai continué mon aventure de coaching.",
 							"J'ai recruté, coaché et mentoré des personnes dans leur progression pour devenir Scrum Master.",
@@ -173,11 +216,15 @@ export default {
                     img: alithya,
                     alt: "Alithya",
                     description: {
-                        en: "2023-today - Master in Innovation Management, biotechnology and bioinformatics",
+                        en: [
+							"2023-today - I went back to the public sector by working for a ministry of the government of Quebec.",
+							"The main goal of this intervention is to help certain teams improve their agile practices.",
+							"I then joined the Origin-A team to support private clients in implementing training waves and agile practices implementation."
+						],
                         fr: [
 							"2023-aujourd'hui - Retour au public en travaillant pour un ministère du gouvernement du Québec.",
 							"L'objectif principal de cette intervention est d'aider certaines équipes à monter en compétences quant à leurs pratiques agile.",
-							"J'ai ensuite rejoins l'équipe Origin-A pour supporter des clients du privés pour l'implantation de vague de formations.",
+							"J'ai ensuite rejoins l'équipe Origin-A pour supporter des clients du privés pour l'implantation de vague de formations et de mise en place de pratiques agiles.",
 						]
                     },
                     isVisible: false
