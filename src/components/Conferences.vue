@@ -102,61 +102,62 @@
 </script>
 
 <style scoped>
-.header-content {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
+	.header-content {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+	}
 
-.profile-img {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	object-fit: cover;
-	margin-right: 20px;
-}
+	.profile-img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-right: 20px;
+	}
 
-.conferences-text {
-	flex: 1;
-	text-align: left;
-	font-family: Urbanist;
-	font-size: 15px;
-  }
+	.conferences-text {
+		flex: 1;
+		text-align: left;
+		font-family: Urbanist;
+		font-size: 15px;
+	}
 
-  .conferences-container h3 {
-    cursor: pointer;
-    color: white;
-	font-size: 18px;
-    display: flex;
-    align-items: center;
-}
+	.conferences-container h3 {
+		cursor: pointer;
+		color: white;
+		font-size: 18px;
+		display: flex;
+		align-items: center;
+	}
 
-.arrow {
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
+	.arrow {
+		display: inline-block;
+		transition: transform 0.3s ease;
+		margin-right: 10px;
+	}
 
-.down {
-    transform: rotate(90deg);
-}
+	.down {
+		transform: rotate(90deg);
+	}
 
-.conferences-container ul {
-    list-style-type: none;
-    padding: 0;
-}
+	.conferences-container ul {
+		list-style-type: none;
+		padding: 0;
+	}
 
-.conferences-container li {
-    margin-bottom: 5px;
-	margin-left: 15px;
-	text-align: left;
-	font-family: Urbanist;
-	font-size: 15px;
-}
+	.conferences-container li {
+		margin-bottom: 5px;
+		margin-left: 15px;
+		text-align: left;
+		font-family: Urbanist;
+		font-size: 15px;
+	}
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* Initially hidden part */ {
-    opacity: 0;
-}
+	.fade-enter-active, .fade-leave-active {
+		transition: opacity 0.5s;
+	}
+	.fade-enter, .fade-leave-to /* Initially hidden part */ {
+		opacity: 0;
+	}
 </style>
