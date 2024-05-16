@@ -118,11 +118,12 @@ export default {
 
 <style scoped>
 	.education-logos {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center; /* Centers items horizontally */
-}
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center; /* Centers items horizontally */
+    }
 
     .education-entry {
         margin-right: 20px; /* Spacing between logos */
@@ -132,6 +133,12 @@ export default {
     .educ-img {
         width: 120px;
         height: auto;
+    }
+
+    .education {
+        margin-top: 10px;
+        font-family: Urbanist;
+        font-size: 15px;
     }
 
     .education-description {
