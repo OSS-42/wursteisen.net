@@ -8,50 +8,63 @@
 		</div>
 	</div>
 </template>
-  
+
 <script>
-  export default {
-	name: 'Card',
-	props: {
-		iconSrc: {
+	export default {
+		name: 'Card',
+		props: {
+			iconSrc: {
 			type: String,
 			default: ''
-		},
-		hoverEffect: {
-        	type: Boolean,
-      		default: true
-    	},
-		clickable: {
+			},
+			hoverEffect: {
+			type: Boolean,
+			default: true
+			},
+			clickable: {
 			type: Boolean,
 			default: false
-		},
-		onClick: {
+			},
+			onClick: {
 			type: Function,
 			default: null
-		},
-		id: {
+			},
+			id: {
 			type: String,
 			required: true
+			},
 		},
-	},
-	data() {
-		return {
-		expanded: false,
-		};
-	},
-	methods: {
-		handleClick() {
-		if (this.clickable) {
-			console.log("Tile clicked");
-			this.$emit('click');
+		data() {
+			return {
+			expanded: false,
+			};
+		},
+		methods: {
+			handleClick() {
+				if (this.clickable) {
+					console.log("Tile clicked");
+					if (this.id === '6') {
+						this.downloadFile();
+					} else if (this.id === '7') {
+						this.$emit('switchLanguage');
+					} else {
+						this.$emit('click');
+					}
+				}
+			},
+			downloadFile() {
+				const url = '/CV_EW_FR.pdf'// Ensure this prop is passed
+				const link = document.createElement('a');
+				link.href = url;
+				link.setAttribute('download', '');
+				document.body.appendChild(link);
+				link.click();
+				document.body.removeChild(link);
+			}
 		}
-		if (this.id === '7') { // Language switch tile
-			this.$emit('switchLanguage');
-		}
-		}
-	}
-  };
+	};
 </script>
+
   
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"');
