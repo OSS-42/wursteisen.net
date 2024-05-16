@@ -118,10 +118,11 @@ export default {
 
 <style scoped>
 	.education-logos {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center; /* Centers items horizontally */
+}
 
     .education-entry {
         margin-right: 20px; /* Spacing between logos */
@@ -129,14 +130,15 @@ export default {
     }
 
     .educ-img {
-        width: 120px; /* Fixed width for each logo */
-        height: auto; /* Maintain aspect ratio */
+        width: 120px;
+        height: auto;
     }
 
     .education-description {
         width: 100%; /* Full width of the container */
         text-align: center;
-        margin-top: 10px; /* Space after logos */
+        margin-top: 10px;
+        font-size: 15px;
     }
 
 	.about-me-container {
