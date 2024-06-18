@@ -56,7 +56,7 @@
 	  "clickable": true,
 	  "hasExpandedContent": true,
 	  "expanded": false,
-	  "expandedContent": "More details about Projects"
+	  "componentName": "Portfolio"
 	},
 	{ "id":"6",
 	  "line1": "",

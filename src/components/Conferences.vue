@@ -25,7 +25,7 @@
 
 <script>
 	export default {
-		name: 'conferences',
+		name: 'Conferences',
 		props: {
 			currentLanguage: {
 				type: String,
