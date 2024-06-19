@@ -10,9 +10,11 @@
 			<h2>{{ localizedText.title2 }}</h2>
 			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true">
 			  <Slide v-for="(project, index) in projects" :key="index">
-				<div class="project-slide" @click="toggleVisibility(project)">
-				  <img :src="project.img" :alt="project.alt" class="project-img">
-				  <p class="project-title">{{ project.alt }}</p>
+				<div class="project-slide">
+				  <a :href="project.link" target="_blank">
+					<img :src="project.img" :alt="project.alt" class="project-img">
+					<p class="project-title">{{ project.alt }}</p>
+				  </a>
 				</div>
 			  </Slide>
 			  <template #addons>
@@ -30,10 +32,12 @@
   import 'vue3-carousel/dist/carousel.css';
   import { Carousel, Slide, Navigation } from 'vue3-carousel';
   
-  import projectImage1 from '@/assets/42.png';
-  import projectImage2 from '@/assets/42.png';
-  import projectImage3 from '@/assets/42.png';
-  import projectImage4 from '@/assets/42.png';
+  import projectImage1 from '@/assets/pong.png';
+  import projectImage2 from '@/assets/cube3D.png';
+  import projectImage3 from '@/assets/minishell.png';
+  import projectImage4 from '@/assets/website1.png';
+  import projectImage5 from '@/assets/website1.png';
+  import projectImage6 from '@/assets/website1.png';
   
   export default {
 	name: 'Portfolio',
@@ -56,55 +60,79 @@
 			title: "My Portfolio",
 			title2: "Projects",
 			paragraphs: [
-			  "Here is a collection of projects I have worked on over the years...",
-			  "Each project showcases my skills in different areas of development...",
-			  "Feel free to click on any project to learn more about it."
+			  "Here is a collection of some major projects I have worked on over the years.",
+			  "Alone or with a team, these projects make me proud, especially ones from 42's cursus.",
+			  "Click on any project to learn more about it."
 			]
 		  },
 		  fr: {
 			title: "Mon Portfolio",
-			title2: "Projets",
+			title2: "Quelques Projets",
 			paragraphs: [
-			  "Voici une collection de projets sur lesquels j'ai travaillé au fil des ans...",
-			  "Chaque projet met en avant mes compétences dans différents domaines du développement...",
-			  "N'hésitez pas à cliquer sur un projet pour en savoir plus."
+			  "Voici une collection de quelques projets notables sur lesquels j'ai travaillé au fil des ans.",
+			  "Seul ou à plusieurs, ces projets, notamment ceux du cursus 42 sont des fiertés.",
+			  "Cliquez sur un projet pour en savoir plus."
 			]
 		  }
 		},
 		projects: [
 		  {
 			img: projectImage1,
-			alt: "Project 1",
+			alt: "Transcendence - Pong",
+			link: "https://github.com/OSS-42/14-TRANSCENDENCE",
 			description: {
-			  en: "Project 1 description in English.",
-			  fr: "Description du projet 1 en français."
+			  en: "This is the final group project of the 42 cursus. I mostly worked on the game part of the project, Pong.",
+			  fr: "Il s'agit du projet final du cursus de 42. J'ai principalement travaillé sur la partie jeu du projet, Pong."
 			},
 			isVisible: false
 		  },
 		  {
 			img: projectImage2,
-			alt: "Project 2",
+			alt: "Cube3D",
+			link: "https://github.com/OSS-42/10-CUB3D",
 			description: {
-			  en: "Project 2 description in English.",
-			  fr: "Description du projet 2 en français."
+			  en: "Another major graphic project in 42 cursus. With another student we decided to recreate 42 Quebec school.",
+			  fr: "Un autre projet graphique majeur du cursus de 42. Avec un autre étudiant nous avons décidé de recréer le campus de 42 Québec."
 			},
 			isVisible: false
 		  },
 		  {
 			img: projectImage3,
-			alt: "Project 3",
+			alt: "Minishell",
+			link: "https://github.com/OSS-42/9-MINISHELL",
 			description: {
-			  en: "Project 3 description in English.",
-			  fr: "Description du projet 3 en français."
+			  en: "Team project with the objective to recreate a bash like shell. A big milestone in 42 cursus.",
+			  fr: "Projet d'équipe ayant pour objectif de recréer un shell basé sur bash. Une étape important du cursus de 42."
 			},
 			isVisible: false
 		  },
 		  {
 			img: projectImage4,
-			alt: "Project 4",
+			alt: "So Long",
+			link: "https://github.com/OSS-42/6-SO_LONG",
 			description: {
-			  en: "Project 4 description in English.",
-			  fr: "Description du projet 4 en français."
+			  en: "First graphic project, solo, in 42 cursus.",
+			  fr: "Premier projet graphique du cursus de 42, en solo."
+			},
+			isVisible: false
+		  },
+		  {
+			img: projectImage5,
+			alt: "Website",
+			link: "https://ragoug.com/",
+			description: {
+			  en: "A simple gallery website for a painter.",
+			  fr: "Très simple site web en mode gallerie pour un artiste."
+			},
+			isVisible: false
+		  },
+		  {
+			img: projectImage6,
+			alt: "Github",
+			link: "https://github.com/OSS-42",
+			description: {
+			  en: "All my other public projects are available on Github.",
+			  fr: "Tous mes autres projets publiques sont disponibles sur Github."
 			},
 			isVisible: false
 		  }
@@ -185,14 +213,14 @@
   /* Custom styles for carousel arrows */
   .carousel__prev, .carousel__next {
 	color: white !important;
-	font-size: 10px !important;
+	font-size: 30px !important;
 	/* background: rgba(0, 0, 0, 0.5) !important; */
 	border: none !important;
 	padding: 10px !important;
   }
   
-  /* .carousel__prev:hover, .carousel__next:hover {
+  .carousel__prev:hover, .carousel__next:hover {
 	color: #ccc !important;
-  } */
+  }
   </style>
   
