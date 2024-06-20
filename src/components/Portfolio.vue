@@ -35,14 +35,14 @@
   import 'vue3-carousel/dist/carousel.css';
   import { Carousel, Slide, Navigation } from 'vue3-carousel';
   
-  import projectImage1 from '@/assets/pong.png';
-  import projectImage2 from '@/assets/cube3D.png';
-  import projectImage3 from '@/assets/minishell.png';
-  import projectImage4 from '@/assets/website1.png';
-  import projectImage5 from '@/assets/website1.png';
-  import projectImage6 from '@/assets/github-portfolio.png';
-  import gitIcon from '@/assets/github.png';
-  import webIcon from '@/assets/www-click.png';
+  import projectImage1 from '@/assets/portfolio/pong.png';
+  import projectImage2 from '@/assets/portfolio/cube3D.png';
+  import projectImage3 from '@/assets/portfolio/minishell.png';
+  import projectImage4 from '@/assets/portfolio/website1.png';
+  import projectImage5 from '@/assets/portfolio/website1.png';
+  import projectImage6 from '@/assets/portfolio/github-portfolio.png';
+  import gitIcon from '@/assets/icons/github.png';
+  import webIcon from '@/assets/icons/www-click.png';
   
   export default {
 	name: 'Portfolio',

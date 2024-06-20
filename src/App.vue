@@ -27,14 +27,14 @@
   import Card from './components/Card.vue';
   import ExpandingTile from './components/ExpandingTile.vue';
   //icons
-  import infoIcon from '@/assets/info.png';
-  import downloadIcon from '@/assets/download.png';
-  import contactIcon from '@/assets/arroba.png';
-  import codeIcon from '@/assets/code.png';
-  import publicationIcon from '@/assets/write.png';
-  import conferenceIcon from '@/assets/speech.png';
-  import translateIcon from '@/assets/translation.png';
-  import workIcon from '@/assets/performance.png';
+  import infoIcon from '@/assets/tiles/info.png';
+  import downloadIcon from '@/assets/tiles/download.png';
+  import contactIcon from '@/assets/tiles/arroba.png';
+  import codeIcon from '@/assets/tiles/code.png';
+  import publicationIcon from '@/assets/tiles/write.png';
+  import conferenceIcon from '@/assets/tiles/speech.png';
+  import translateIcon from '@/assets/tiles/translation.png';
+  import workIcon from '@/assets/tiles/performance.png';
 
   export default {
     name: 'App',

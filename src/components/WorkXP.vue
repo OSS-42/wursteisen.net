@@ -1,7 +1,7 @@
 <template>
 	<div class="work-xp-container">
 	  <div class="header-content">
-		<img src="@/assets/perso2-expo.png" alt="Profile Image" class="profile-img">
+		<img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
 		<div class="text-content">
 		  <div class="work-text">
 			<h2>{{ localizedText.title }}</h2>
@@ -24,17 +24,17 @@
 </template>
 
 <script>
-import fujitsu from '@/assets/fujitsu.png';
-import nurun from '@/assets/nurun.png';
-import publicis from '@/assets/publicis.png';
-import logibec from '@/assets/logibec.png';
-import facilite from '@/assets/facilite.png';
-import cgi from '@/assets/cgi.png';
-import momentum from '@/assets/momentum.png';
-import pragsix from '@/assets/pragsix.png';
-import alithya from '@/assets/alithya.png';
-import agileqc from '@/assets/agileqc.png';
-import agiletr from '@/assets/agiletour.png';
+import fujitsu from '@/assets/workXP/fujitsu.png';
+import nurun from '@/assets/workXP/nurun.png';
+import publicis from '@/assets/workXP/publicis.png';
+import logibec from '@/assets/workXP/logibec.png';
+import facilite from '@/assets/workXP/facilite.png';
+import cgi from '@/assets/workXP/cgi.png';
+import momentum from '@/assets/workXP/momentum.png';
+import pragsix from '@/assets/workXP/pragsix.png';
+import alithya from '@/assets/workXP/alithya.png';
+import agileqc from '@/assets/workXP/agileqc.png';
+import agiletr from '@/assets/workXP/agiletour.png';
 
 export default {
     name: 'WorkXP',

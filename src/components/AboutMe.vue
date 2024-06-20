@@ -1,7 +1,7 @@
 <template>
     <div class="about-me-container">
         <div class="header-content">
-            <img src="@/assets/perso2-expo.png" alt="Profile Image" class="profile-img">
+            <img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
             <div class="text-content">
                 <div class="about-me-text">
                     <h2>{{ localizedText.title }}</h2>
@@ -23,10 +23,10 @@
 
 
 <script>
-import image42 from '@/assets/42.png';
-import imageEsiee from '@/assets/esiee.png';
-import imageUl from '@/assets/ul.png';
-import imagePmi from '@/assets/pmi.png';
+import image42 from '@/assets/education/42.png';
+import imageEsiee from '@/assets/education/esiee.png';
+import imageUl from '@/assets/education/ul.png';
+import imagePmi from '@/assets/education/pmi.png';
 
 export default {
     name: 'AboutMe',
