@@ -9,11 +9,12 @@
         :hover-effect="item.hoverEffect"
         :clickable="item.clickable"
         @click="toggleTile(item.id)"
-        @switchLanguage="switchLanguage">
-      <template v-slot:line1>{{ item.line1 }}</template>
-      <template v-slot:line2>{{ item.line2 }}</template>
-      <template v-slot:line3>{{ item.line3 }}</template>
-    </Card>
+        @switchLanguage="switchLanguage"
+        @downloadFile="downloadFile">
+        <template v-slot:line1>{{ item.line1 }}</template>
+        <template v-slot:line2>{{ item.line2 }}</template>
+        <template v-slot:line3>{{ item.line3 }}</template>
+      </Card>
     </div>
     <ExpandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
       <component :is="currentComponent" :current-language="currentLanguage" v-if="currentComponent"></component>
@@ -103,7 +104,8 @@
             this.currentComponent = null;
           });
       },
-      downloadFile(url) {
+      downloadFile() {
+        const url = '/CV_EW_FR.pdf';
         const link = document.createElement('a');
         link.href = url;
         link.setAttribute('download', 'CV_EW_FR.pdf');

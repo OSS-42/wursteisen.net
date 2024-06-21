@@ -44,7 +44,7 @@
 				if (this.clickable) {
 					console.log("Tile clicked");
 					if (this.id === '6') {
-						this.downloadFile();
+						this.$emit('downloadFile');
 					} else if (this.id === '7') {
 						this.$emit('switchLanguage');
 					} else {
@@ -52,15 +52,6 @@
 					}
 				}
 			},
-			downloadFile() {
-				const url = '/CV_EW_FR.pdf'// Ensure this prop is passed
-				const link = document.createElement('a');
-				link.href = url;
-				link.setAttribute('download', '');
-				document.body.appendChild(link);
-				link.click();
-				document.body.removeChild(link);
-			}
 		}
 	};
 </script>
