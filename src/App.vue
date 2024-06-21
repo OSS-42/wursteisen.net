@@ -131,6 +131,7 @@
 </script>
 
 <style>
+
   #app {
     min-height: 100vh;
     min-width: 100vw;
@@ -141,7 +142,7 @@
     background-size: cover;
     width: 100vw;
     padding: 20px;
-    /* overflow: auto; */
+    overflow: hidden;
   }
 
   .grid {
