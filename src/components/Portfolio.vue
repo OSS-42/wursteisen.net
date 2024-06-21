@@ -38,7 +38,7 @@
   import projectImage1 from '@/assets/portfolio/pong.png';
   import projectImage2 from '@/assets/portfolio/cube3D.png';
   import projectImage3 from '@/assets/portfolio/minishell.png';
-  import projectImage4 from '@/assets/portfolio/website1.png';
+  import projectImage4 from '@/assets/portfolio/so_long.png';
   import projectImage5 from '@/assets/portfolio/website1.png';
   import projectImage6 from '@/assets/portfolio/github-portfolio.png';
   import gitIcon from '@/assets/icons/github.png';
@@ -88,8 +88,8 @@
 				alt: "Transcendence - Pong",
 				link: "https://github.com/OSS-42/14-TRANSCENDENCE",
 				description: {
-					en: "This is the final group project of the 42 cursus. I mostly worked on the game part of the project, Pong.",
-					fr: "Il s'agit du projet final du cursus de 42. J'ai principalement travaillé sur la partie jeu du projet, Pong."
+					en: "This is the final group project of the 42 cursus. I mostly worked on the game part of the project, Pong, in React and Three.js.",
+					fr: "Il s'agit du projet final du cursus de 42. J'ai principalement travaillé sur la partie jeu du projet, Pong, en React et Three.js."
 				},
 				icon: gitIcon
 			},
@@ -98,8 +98,8 @@
 				alt: "Cube3D",
 				link: "https://github.com/OSS-42/10-CUB3D",
 				description: {
-					en: "Another major graphic project in 42 cursus. With another student we decided to recreate 42 Quebec school.",
-					fr: "Un autre projet graphique majeur du cursus de 42. Avec un autre étudiant nous avons décidé de recréer le campus de 42 Québec."
+					en: "Another major graphic project in 42 cursus. With another student we decided to recreate 42 Quebec school. It's raycasting in C.",
+					fr: "Un autre projet graphique majeur du cursus de 42. Avec un autre étudiant nous avons décidé de recréer le campus de 42 Québec. Il s<Agit de raycasting en C."
 				},
 				icon: gitIcon
 			},
@@ -118,8 +118,8 @@
 				alt: "So Long",
 				link: "https://github.com/OSS-42/6-SO_LONG",
 				description: {
-					en: "First graphic project, solo, in 42 cursus.",
-					fr: "Premier projet graphique du cursus de 42, en solo."
+					en: "First graphic project, solo, in 42 cursus. It uses C.",
+					fr: "Premier projet graphique du cursus de 42, en solo. Il est en C."
 				},
 				icon: gitIcon
 			},
