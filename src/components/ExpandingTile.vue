@@ -39,6 +39,7 @@
 	transition: opacity 0.5s ease, visibility 0.5s ease;
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.5);
+	overflow: auto;
   }
   
   .modal-content {

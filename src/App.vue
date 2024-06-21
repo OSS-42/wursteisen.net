@@ -139,6 +139,7 @@
     background-size: cover;
     width: 100vw;
     padding: 20px;
+    overflow: auto;
   }
 
   .grid {

@@ -77,13 +77,14 @@
 	border-radius: 5px;
 	border-width: 1px;
 	border-style: solid;
-	border-color: rgba(255, 255, 255, 0.5);
+	border-color: rgba(255, 255, 255, 1);
 	background-color: rgba(255, 255, 255, 0.1);
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	padding: 10px;
 	transition: transform 0.3s;
 	width: 100%;
 	height: 150px;
+	overflow: auto;
   }
 
   .card-content {
@@ -103,6 +104,7 @@
   
   .card:hover {
 	transform: scale(1.1);
+	border-width: 2px;
   }
 
   .line-one {
