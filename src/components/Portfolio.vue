@@ -99,7 +99,7 @@
 				link: "https://github.com/OSS-42/10-CUB3D",
 				description: {
 					en: "Another major graphic project in 42 cursus. With another student we decided to recreate 42 Quebec school. It's raycasting in C.",
-					fr: "Un autre projet graphique majeur du cursus de 42. Avec un autre étudiant nous avons décidé de recréer le campus de 42 Québec. Il s<Agit de raycasting en C."
+					fr: "Un autre projet graphique majeur du cursus de 42. Avec un autre étudiant nous avons décidé de recréer le campus de 42 Québec. Il s'agit de raycasting en C."
 				},
 				icon: gitIcon
 			},
