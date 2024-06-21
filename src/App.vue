@@ -144,8 +144,10 @@
 
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 150px);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
+    width: 490px;
+    margin: 0 auto;
   }
 
   .slide-enter-active, .slide-leave-active {
