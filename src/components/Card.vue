@@ -75,7 +75,7 @@
 	transition: transform 0.3s;
 	width: 100%;
 	height: 150px;
-	overflow: auto;
+	/* overflow: auto; */
   }
 
   .card-content {

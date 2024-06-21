@@ -105,7 +105,7 @@
           });
       },
       downloadFile() {
-        const url = '/CV_EW_FR.pdf';
+        const url = '/wursteisen.net/html/CV_EW_FR.pdf';
         const link = document.createElement('a');
         link.href = url;
         link.setAttribute('download', 'CV_EW_FR.pdf');
@@ -141,7 +141,7 @@
     background-size: cover;
     width: 100vw;
     padding: 20px;
-    overflow: auto;
+    /* overflow: auto; */
   }
 
   .grid {
