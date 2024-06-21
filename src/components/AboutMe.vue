@@ -180,4 +180,25 @@ export default {
 		font-family: Urbanist;
 		font-size: 15px;
 	}
+
+    @media (max-width: 600px) {
+        .header-content {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+
+        .text-content {
+            width: 100%;
+        }
+    }
 </style>

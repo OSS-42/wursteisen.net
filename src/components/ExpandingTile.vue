@@ -33,7 +33,7 @@
 	bottom: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	visibility: hidden;
 	opacity: 0;
 	transition: opacity 0.5s ease, visibility 0.5s ease;
@@ -44,6 +44,7 @@
   
   .modal-content {
 	position: relative;
+	margin: 20px 0;
 	background: linear-gradient(to right, #180353, #295ff4);
 	border-radius: 5px;
 	padding: 20px;
@@ -53,6 +54,7 @@
 	color: white;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	z-index: 11;
+	overflow: auto;
   }
   
   .close-btn {

@@ -22,10 +22,10 @@
 </template>
 
 <script>
-  import { markRaw } from 'vue';
+  import { markRaw, defineAsyncComponent } from 'vue';
   //components
-  import Card from './components/Card.vue';
-  import ExpandingTile from './components/ExpandingTile.vue';
+  const Card = defineAsyncComponent(() => import('./components/Card.vue'));
+  const ExpandingTile = defineAsyncComponent(() => import('./components/ExpandingTile.vue'));
   //icons
   import infoIcon from '@/assets/tiles/info.png';
   import downloadIcon from '@/assets/tiles/download.png';
