@@ -63,6 +63,7 @@
 	background: none;
 	font-size: 20px;
 	cursor: pointer;
+	color: white;
   }
   
   .modal.visible {
