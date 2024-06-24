@@ -5,6 +5,7 @@
             <div class="publications-text">
                 <h2>{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
+				<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
                 <div v-for="platformPub in publications" :key="platformPub.platform">
                     <h3 @click="platformPub.isVisible = !platformPub.isVisible">
                         <span :class="{ 'arrow': true, 'down': platformPub.isVisible }"> > </span>
@@ -40,6 +41,8 @@
 						paragraphs: [
 							"It is always a pleasure to find ideas to write about, especially when it allows me to share pertinent experiences, questionnings or accomplishments.",
 							"I am mostly writing in french (and starting to write in english too).",
+						], 
+						action: [
 							"You can find some of my articles by visiting the following links.",
 						]
 					},
@@ -48,6 +51,8 @@
 						paragraphs: [
 							"C'est toujours un plaisir de trouver des idées sur lesquelles écrire, notamment lorsque cela me permet de partager des expériences pertinentes, des questionnements ou encore des accomplissements.",
 							"J'écris principalement en français (mais j'écris de plus en plus en anglais également).",
+						], 
+						action: [
 							"Vous pouvez trouver quelques un des mes billets en cliquant sur les liens ci-dessous.",
 						]
 					}
@@ -198,9 +203,16 @@
 	.fade-enter-active, .fade-leave-active {
 		transition: opacity 0.5s;
 	}
+
 	.fade-enter, .fade-leave-to /* Initially hidden part */ {
 		opacity: 0;
 	}
+
+	.action {
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }
 
 	@media (max-width: 600px) {
         .header-content {

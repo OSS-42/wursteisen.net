@@ -19,7 +19,7 @@
 			},
 			hoverEffect: {
 			type: Boolean,
-			default: true
+			default: false
 			},
 			clickable: {
 			type: Boolean,

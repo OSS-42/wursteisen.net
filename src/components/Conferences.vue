@@ -5,6 +5,7 @@
             <div class="conferences-text">
                 <h2>{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
+				<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
 				<div v-for="yearConf in conferences" :key="yearConf.year">
 					<h3 @click="yearConf.isVisible = !yearConf.isVisible">
 						<span :class="{ 'arrow': true, 'down': yearConf.isVisible }"> > </span>
@@ -12,8 +13,8 @@
 					</h3>
 					<transition name="fade">
 						<ul v-show="yearConf.isVisible">
-							<li v-for="article in yearConf.speeches" :key="article.title">
-								<a :href="article.url" target="_blank" rel="noopener noreferrer">{{ article.title }}</a>
+							<li v-for="conferences in yearConf.speeches" :key="conferences.title">
+								<a :href="conferences.url" target="_blank" rel="noopener noreferrer">{{ conferences.title }}</a>
 							</li>
 						</ul>
 					</transition>
@@ -39,14 +40,20 @@
 						title: "Conferences",
 						paragraphs: [
 							"From time to time, I also enjoy being in presentation mode, so I give talks or 'Lunch & Learn' sessions.",
-							"You can find some of my presentations by clicking on the links below.",
+							"You can find the youtube link for Quebec's Agile Tour conference in 2019."
+						],
+						action: [
+							"You can find the list of my presentations by year.",
 						]
 					},
 					fr: {
 						title: "Conférences",
 						paragraphs: [
 							"De temps à autres, j'aime également me retrouver en mode présentation, je fais donc des conférences ou \'Lunch & Learn\'.",
-							"Vous pouvez trouver quelques unes de mes prestations en cliquant sur les liens ci-dessous.",
+							"Vous pouvez trouver le lien youtube de la conférence à l'Agile Tour de Québec en 2019."
+						],
+						action: [
+							"Vous pouvez trouver la liste de mes prestations par année.",
 						]
 					}
 				},
@@ -157,9 +164,16 @@
 	.fade-enter-active, .fade-leave-active {
 		transition: opacity 0.5s;
 	}
+
 	.fade-enter, .fade-leave-to /* Initially hidden part */ {
 		opacity: 0;
 	}
+
+	.action {
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }
 
 	@media (max-width: 600px) {
         .header-content {

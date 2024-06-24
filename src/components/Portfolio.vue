@@ -5,6 +5,7 @@
 		  <div class="portfolio-text">
 			<h2>{{ localizedText.title }}</h2>
 			<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
+			<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>  
 		  </div>
 		  <div class="projects">
 			<h2>{{ localizedText.title2 }}</h2>
@@ -69,7 +70,9 @@
 			paragraphs: [
 			  "Here is a collection of some major projects I have worked on over the years.",
 			  "Alone or with a team, these projects make me proud, especially ones from 42's cursus.",
-			  "Click on any project to learn more about it."
+			], 
+			action: [
+				"Click on the icon next to the project's title to learn more about it."
 			]
 		  },
 		  fr: {
@@ -78,7 +81,9 @@
 			paragraphs: [
 			  "Voici une collection de quelques projets notables sur lesquels j'ai travaillé au fil des ans.",
 			  "Seul ou à plusieurs, ces projets, notamment ceux du cursus 42 sont des fiertés.",
-			  "Cliquez sur un projet pour en savoir plus."
+			], 
+			action: [
+			  "Cliquez sur l'icône à côté du titre du projet pour en savoir plus."
 			]
 		  }
 		},
@@ -240,6 +245,12 @@
 	.carousel__prev:hover, .carousel__next:hover {
 	color: #ccc !important;
 	}
+
+	.action {
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }
 
 	@media (max-width: 600px) {
         .header-content {

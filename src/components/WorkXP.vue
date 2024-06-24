@@ -6,6 +6,7 @@
 		  <div class="work-text">
 			<h2>{{ localizedText.title }}</h2>
 			<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
+            <p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
 		  </div>
 		  <div class="experiences">
 			<div v-for="(work, index) in experiences" :key="index"
@@ -51,12 +52,16 @@ export default {
                 en: {
                     title: "My work experiences",
                     paragraphs: [
+                    ], 
+                    action: [
                         "click on a logo to discover more about my experience."
                     ]
                 },
                 fr: {
                     title: "Mes expériences de travail",
                     paragraphs: [
+                    ], 
+                    action: [
                         "Cliquez sur un logo pour en savoir plus sur mon expérience."
                     ]
                 }
@@ -267,71 +272,77 @@ export default {
 </script>
 
 <style scoped>
-.work-xp-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
+    .work-xp-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
 
-.header-content {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
+    .header-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
 
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-right: 20px;
-}
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+    }
 
-.text-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 
-.work-text, .experiences, .work-description {
-  text-align: left;
-  font-family: Urbanist;
-  font-size: 15px;
-  margin-top: 10px;
-}
+    .work-text, .experiences, .work-description {
+        text-align: left;
+        font-family: Urbanist;
+        font-size: 15px;
+        margin-top: 10px;
+    }
 
-.experiences {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
+    .experiences {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
-.experience {
-  margin: 10px;
-  text-align: center;
-}
+    .experience {
+        margin: 10px;
+        text-align: center;
+    }
 
-.experience-logo {
-  max-width: 300px;
-  max-height: 40px;
-  height: auto;
-}
+    .experience-logo {
+        max-width: 300px;
+        max-height: 40px;
+        height: auto;
+    }
 
-.date-label {
-  display: block;
-  color: white;
-  font-size: 12px;
-  margin-top: 5px;
-}
+    .date-label {
+        display: block;
+        color: white;
+        font-size: 12px;
+        margin-top: 5px;
+    }
 
-.work-description {
-  margin-top: 20px;
-  padding: 10px;
-  width: 100%;
-}
+    .work-description {
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+    }
 
-@media (max-width: 600px) {
+    .action {
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+    }   
+
+    @media (max-width: 600px) {
         .header-content {
             flex-direction: column;
             align-items: center;
