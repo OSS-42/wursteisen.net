@@ -1,5 +1,5 @@
 <template>
-	<div class="card" :class="{ 'no-hover': !hoverEffect } " @click="handleClick" >
+	 <div class="card" :class="{ 'no-hover': !hoverEffect, 'hover-effect': hoverEffect }" @click="handleClick">
 		<div class="card-content">
 			<img v-if="iconSrc" :src="iconSrc" alt="Icon" class="card-icon">
 			<p class="line-one"><slot name="line1"></slot></p>
@@ -93,7 +93,13 @@
     transform: none;
   }
   
-  .card:hover {
+  /* .card:hover {
+	transform: scale(1.1);
+	border-color: rgba(255, 255, 255, 1);
+	border-width: 2px;
+  } */
+
+  .card.hover-effect:hover {
 	transform: scale(1.1);
 	border-color: rgba(255, 255, 255, 1);
 	border-width: 2px;
