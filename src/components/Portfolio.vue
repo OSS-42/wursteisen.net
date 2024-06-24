@@ -12,13 +12,13 @@
 			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true">
 			  <Slide v-for="(project, index) in projects" :key="index">
 				<div class="project-slide">
-				  <img :src="project.img" :alt="project.alt" class="project-img">
-				  <div class="project-title">
-					<p>{{ project.alt }}</p>
-					<a :href="project.link" target="_blank">
-                    <img :src="project.icon" alt="Link Icon" class="project-link-icon">
+				  <img :src="project.img" :alt="project.alt" class="project-img" @click="toggleZoom(project.img)">
+				  <a :href="project.link" target="_blank">
+					<div class="project-title">
+						<p>{{ project.alt }}</p>
+						<img :src="project.icon" alt="Link Icon" class="project-link-icon">
+					</div>
                   </a>
-				  </div>
 				  <p class="project-description">{{ project.description[currentLanguage] }}</p>
 				</div>
 			  </Slide>
@@ -28,6 +28,9 @@
 			</Carousel>
 		  </div>
 		</div>
+	  </div>
+	  <div v-if="zoomed" class="zoomed-image-container" @click="toggleZoom('')">
+		<img :src="zoomedImageSrc" alt="Zoomed Image" class="zoomed-image" @click="toggleZoom('')">
 	  </div>
 	</div>
   </template>  
@@ -63,6 +66,8 @@
 		gitIcon,
 		webIcon,
 		visibleProject: null,
+		zoomedImageSrc: '',
+    	zoomed: false,
 		translations: {
 		  en: {
 			title: "My Portfolio",
@@ -154,6 +159,15 @@
 	methods: {
 	  toggleVisibility(project) {
 		this.visibleProject = (this.visibleProject === project) ? null : project;
+	  },
+	  toggleZoom(imgSrc) {
+		if (this.zoomed && this.zoomedImageSrc === imgSrc) {
+			this.zoomed = false;
+			this.zoomedImageSrc = '';
+		} else {
+			this.zoomedImageSrc = imgSrc;
+			this.zoomed = true;
+		}
 	  }
 	},
 	computed: {
@@ -251,6 +265,26 @@
         font-weight: bold;
         text-align: center;
     }
+
+	.zoomed-image-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.8);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+	}
+
+	.zoomed-image {
+		max-width: 90%;
+		max-height: 90%;
+		transition: transform 0.3s ease;
+		cursor: pointer;
+	}
 
 	@media (max-width: 600px) {
         .header-content {
