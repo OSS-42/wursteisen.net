@@ -9,7 +9,7 @@
 		  </div>
 		  <div class="projects">
 			<h2>{{ localizedText.title2 }}</h2>
-			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true">
+			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true" :class="{ 'carousel-hidden': !isCarouselVisible }">
 			  <Slide v-for="(project, index) in projects" :key="index">
 				<div class="project-slide">
 				  <img :src="project.img" :alt="project.alt" class="project-img" @click="toggleZoom(project.img)">
@@ -68,6 +68,7 @@
 		visibleProject: null,
 		zoomedImageSrc: '',
     	zoomed: false,
+		isCarouselVisible: false,
 		translations: {
 		  en: {
 			title: "My Portfolio",
@@ -168,7 +169,15 @@
 			this.zoomedImageSrc = imgSrc;
 			this.zoomed = true;
 		}
-	  }
+	  },
+	  showCarousel() {
+    	this.isCarouselVisible = true;
+		}
+	  },
+	  mounted() {
+		this.$nextTick(() => {
+			this.showCarousel();
+	    });
 	},
 	computed: {
 	  localizedText() {
@@ -284,6 +293,10 @@
 		max-height: 90%;
 		transition: transform 0.3s ease;
 		cursor: pointer;
+	}
+
+	.carousel-hidden {
+		visibility: hidden;
 	}
 
 	@media (max-width: 600px) {
