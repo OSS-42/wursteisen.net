@@ -1,5 +1,5 @@
 <template>
-	 <div class="card" :class="{ 'no-hover': !hoverEffect, 'hover-effect': hoverEffect }" @click="handleClick">
+	 <div class="card" :class="{ 'card-inactive': !hoverEffect, 'hover-effect': hoverEffect }" @click="handleClick">
 		<div class="card-content">
 			<img v-if="iconSrc" :src="iconSrc" alt="Icon" class="card-icon">
 			<p class="line-one"><slot name="line1"></slot></p>
@@ -75,7 +75,6 @@
 	transition: transform 0.3s;
 	width: 100%;
 	height: 150px;
-	/* overflow: auto; */
   }
 
   .card-content {
@@ -85,19 +84,28 @@
 
   .card-icon {
 	margin-top: 5px;
-	width: 50px; /* Adjust width as needed */
-	height: 50px; /* Adjust height as needed */
+	width: 50px;
+	height: 50px;
   }
 
   .card.no-hover:hover {
     transform: none;
   }
   
-  /* .card:hover {
-	transform: scale(1.1);
-	border-color: rgba(255, 255, 255, 1);
-	border-width: 2px;
-  } */
+  .card-inactive {
+    border-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 1);
+    transform: none;
+  }
+
+  .card-inactive .line-one,
+  .card-inactive .line-two,
+  .card-inactive .line-three {
+	font-weight: 300;
+    background: linear-gradient(to right, #180353, #295ff4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .card.hover-effect:hover {
 	transform: scale(1.1);
@@ -106,17 +114,17 @@
   }
 
   .line-one {
-	font-size: 30px; /* Adjust size */
+	font-size: 30px;
 	color: white;
 	font-family: Urbanist;
 	font-weight: 300;
   }
 
   .line-two {
-  	font-size: 20px; /* Adjust size */
+  	font-size: 20px;
 	color: white;
 	font-family: Urbanist;
-	font-weight: 100;
+	font-weight: 200;
   }
 </style>
   
