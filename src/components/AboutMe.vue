@@ -131,7 +131,8 @@ export default {
     }
 
     .education-entry {
-        margin-right: 20px; /* Spacing between logos */
+        margin-right: 30px; /* Spacing between logos */
+        margin-top: 20px;
         cursor: pointer;
     }
 

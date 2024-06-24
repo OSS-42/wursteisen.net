@@ -313,7 +313,8 @@ export default {
     }
 
     .experience {
-        margin: 10px;
+        margin-right: 20px;
+        margin-top: 10px;
         text-align: center;
     }
 
