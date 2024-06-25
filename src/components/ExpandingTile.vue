@@ -31,12 +31,12 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: flex-start;
-	visibility: hidden;
+	/* visibility: hidden; */
 	opacity: 0;
-	transition: opacity 0.5s ease, visibility 0.5s ease;
+	transition: opacity 0.5s ease, display 0.5s ease;
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.5);
 	overflow: auto;
@@ -69,7 +69,7 @@
   }
   
   .modal.visible {
-	visibility: visible;
+	display: flex;
 	opacity: 1;
   }
 </style>
