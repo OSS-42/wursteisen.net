@@ -136,16 +136,17 @@
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
     background: linear-gradient(to right, #180353, #295ff4);
     background-size: cover;
     width: 100vw;
-    padding: 20px;
-    overflow: auto;
+    height: 100vh; /* Ensure it takes full viewport height */
+    /* padding: 20px; */
+    box-sizing: border-box; /* Ensure padding doesn't add extra size */
   }
 
   .grid {
+    outline: 1px solid red;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
