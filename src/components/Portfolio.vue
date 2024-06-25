@@ -78,7 +78,7 @@
 			  "Alone or with a team, these projects make me proud, especially ones from 42's cursus.",
 			], 
 			action: [
-				"Click on the icon next to the project's title to learn more about it."
+				"Click on the project's title to learn more about it."
 			]
 		  },
 		  fr: {
@@ -89,7 +89,7 @@
 			  "Seul ou à plusieurs, ces projets, notamment ceux du cursus 42 sont des fiertés.",
 			], 
 			action: [
-			  "Cliquez sur l'icône à côté du titre du projet pour en savoir plus."
+			  "Cliquez sur le titre du projet pour en savoir plus."
 			]
 		  }
 		},
