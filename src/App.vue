@@ -142,15 +142,17 @@
     width: 100vw;
     height: 100vh; /* Ensure it takes full viewport height */
     /* padding: 20px; */
-    box-sizing: border-box; /* Ensure padding doesn't add extra size */
+    /* box-sizing: border-box; Ensure padding doesn't add extra size */
+    overflow: auto;
   }
 
   .grid {
     outline: 1px solid red;
+    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
     gap: 20px;
-    width: 490px;
+    width: 530px;
     margin: 0 auto;
   }
 
