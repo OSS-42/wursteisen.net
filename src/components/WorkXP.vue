@@ -4,7 +4,7 @@
 		<img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
 		<div class="text-content">
 		  <div class="work-text">
-			<h2>{{ localizedText.title }}</h2>
+			<h2 class="paragraph">{{ localizedText.title }}</h2>
 			<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
             <p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
 		  </div>
@@ -17,7 +17,10 @@
 			</div>
 		  </div>
 		  <div v-if="visibleWork" class="work-description">
-			<p v-for="desc in visibleWork.description[currentLanguage]" :key="desc">{{ desc }}</p>
+			<p v-for="(desc, index) in visibleWork.description[currentLanguage]" :key="index">
+                <span v-if="index === 0"><h2>{{ desc }}</h2></span>
+                <span v-else>{{ desc }}</span>
+            </p>
 		  </div>
 		</div>
 	  </div>
@@ -341,7 +344,14 @@ export default {
         font-style: italic;
         font-weight: bold;
         text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }   
+
+    .paragraph {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
     @media (max-width: 600px) {
         .header-content {

@@ -1,14 +1,14 @@
 <template>
 	<div class="portfolio-container">
 	  <div class="header-content">
+		<img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
 		<div class="text-content">
 		  <div class="portfolio-text">
-			<h2>{{ localizedText.title }}</h2>
+			<h2 class="paragraph">{{ localizedText.title }}</h2>
 			<p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
 			<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>  
 		  </div>
 		  <div class="projects">
-			<h2>{{ localizedText.title2 }}</h2>
 			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true" :class="{ 'carousel-hidden': !isCarouselVisible }">
 			  <Slide v-for="(project, index) in projects" :key="index">
 				<div class="project-slide">
@@ -72,7 +72,6 @@
 		translations: {
 		  en: {
 			title: "My Portfolio",
-			title2: "Projects",
 			paragraphs: [
 			  "Here is a collection of some major projects I have worked on over the years.",
 			  "Alone or with a team, these projects make me proud, especially ones from 42's cursus.",
@@ -83,7 +82,6 @@
 		  },
 		  fr: {
 			title: "Mon Portfolio",
-			title2: "Quelques Projets",
 			paragraphs: [
 			  "Voici une collection de quelques projets notables sur lesquels j'ai travaillé au fil des ans.",
 			  "Seul ou à plusieurs, ces projets, notamment ceux du cursus 42 sont des fiertés.",
@@ -273,7 +271,14 @@
         font-style: italic;
         font-weight: bold;
         text-align: center;
+		margin-top: 20px;
+        margin-bottom: 20px;
     }
+
+	.paragraph {
+		margin-top: 20px;
+        margin-bottom: 20px;
+	}
 
 	.zoomed-image-container {
 		position: fixed;

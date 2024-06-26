@@ -3,7 +3,7 @@
         <div class="header-content">
             <img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
             <div class="publications-text">
-                <h2>{{ localizedText.title }}</h2>
+                <h2 class="paragraph">{{ localizedText.title }}</h2>
                 <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
 				<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
                 <div v-for="platformPub in publications" :key="platformPub.platform">
@@ -212,7 +212,14 @@
         font-style: italic;
         font-weight: bold;
         text-align: center;
+		margin-top: 20px;
+        margin-bottom: 20px;
     }
+
+	.paragraph {
+		margin-top: 20px;
+        margin-bottom: 20px;
+	}
 
 	@media (max-width: 600px) {
         .header-content {

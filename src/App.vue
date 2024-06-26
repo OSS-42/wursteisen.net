@@ -147,7 +147,6 @@
   }
 
   .grid {
-    outline: 1px solid red;
     padding: 20px;
     display: grid;
     justify-content: center;
