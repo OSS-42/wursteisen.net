@@ -255,6 +255,14 @@
 	font-size: 15px;
 	}
 
+	.profile-img {
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		object-fit: cover;
+		margin-right: 20px;
+	}
+
 	.carousel__prev, .carousel__next {
 	color: white !important;
 	font-size: 30px !important;
