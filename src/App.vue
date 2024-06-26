@@ -136,7 +136,7 @@
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
-    place-items: center;
+    align-items: flex-start;
     background: linear-gradient(to right, #180353, #295ff4);
     background-size: cover;
     width: 100vw;
@@ -150,6 +150,7 @@
     outline: 1px solid red;
     padding: 20px;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
     gap: 20px;
     width: 530px;
@@ -163,5 +164,11 @@
   .slide-enter, .slide-leave-to {
     opacity: 0;
     transform: translateY(-20px);
+  }
+
+  @media (min-width: 530px) {
+    #app {
+      align-items: center;
+    }
   }
 </style>
