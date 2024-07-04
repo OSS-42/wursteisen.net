@@ -19,6 +19,7 @@
     <ExpandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
       <component :is="currentComponent" :current-language="currentLanguage" v-if="currentComponent"></component>
     </ExpandingTile>
+    <footer class="app-footer">Made by Eric Wursteisen</footer>
   </div>
 </template>
 
@@ -131,6 +132,8 @@
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"');
+  @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"');
 
   #app {
     min-height: 100vh;
@@ -140,9 +143,7 @@
     background: linear-gradient(to right, #180353, #295ff4);
     background-size: cover;
     width: 100vw;
-    height: 100vh; /* Ensure it takes full viewport height */
-    /* padding: 20px; */
-    /* box-sizing: border-box; Ensure padding doesn't add extra size */
+    height: 100vh;
     overflow: auto;
   }
 
@@ -163,6 +164,17 @@
   .slide-enter, .slide-leave-to {
     opacity: 0;
     transform: translateY(-20px);
+  }
+
+  .app-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-family: Urbanist;
   }
 
   @media (min-width: 530px) {

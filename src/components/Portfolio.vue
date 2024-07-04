@@ -30,7 +30,7 @@
 		</div>
 	  </div>
 	  <div v-if="zoomed" class="zoomed-image-container" @click="toggleZoom('')">
-		<img :src="zoomedImageSrc" alt="Zoomed Image" class="zoomed-image" @click="toggleZoom('')">
+		<img :src="zoomedImageSrc" alt="Zoomed Image" class="zoomed-image">
 	  </div>
 	</div>
   </template>  
@@ -160,13 +160,8 @@
 		this.visibleProject = (this.visibleProject === project) ? null : project;
 	  },
 	  toggleZoom(imgSrc) {
-		if (this.zoomed && this.zoomedImageSrc === imgSrc) {
-			this.zoomed = false;
-			this.zoomedImageSrc = '';
-		} else {
-			this.zoomedImageSrc = imgSrc;
-			this.zoomed = true;
-		}
+		this.zoomed = !this.zoomed;
+		this.zoomedImageSrc = this.zoomed ? imgSrc : '';
 	  },
 	  showCarousel() {
     	this.isCarouselVisible = true;
