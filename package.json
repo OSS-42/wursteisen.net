@@ -10,11 +10,26 @@
   },
   "dependencies": {
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "vue3-carousel": "^0.3.3"
+    "vue-router": "^5.1.0",
+    "vue3-carousel": "^0.17.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "vite": "^5.2.8"
-  }
+    "@vitejs/plugin-react": "^6.0.3",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "vite": "^8.1.3",
+    "vitest": "^4.1.9"
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSS-42/wursteisen.net.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSS-42/wursteisen.net/issues"
+  },
+  "homepage": "https://github.com/OSS-42/wursteisen.net#readme"
 }
