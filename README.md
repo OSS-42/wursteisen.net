@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Publish
+
+Push to `main`. GitHub Actions builds the site and rsyncs `dist/` to the droplet. Secrets live in the repo **Settings → Secrets and variables → Actions**, not in this file.
