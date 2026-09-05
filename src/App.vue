@@ -25,6 +25,7 @@
 
 <script>
   import { markRaw, defineAsyncComponent } from 'vue';
+  import site from '@/content/site.json';
   //components
   const Card = defineAsyncComponent(() => import('./components/Card.vue'));
   const ExpandingTile = defineAsyncComponent(() => import('./components/ExpandingTile.vue'));
@@ -106,10 +107,10 @@
           });
       },
       downloadFile() {
-        const url = '/wursteisen.net/html/CV_EW_FR.pdf';
+        const url = site.cvUrl || '/CV_EW_FR.pdf';
         const link = document.createElement('a');
         link.href = url;
-        link.setAttribute('download', 'CV_EW_FR.pdf');
+        link.setAttribute('download', site.cvFilename || 'CV_EW_FR.pdf');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -120,6 +121,7 @@
       switchLanguage() {
         this.currentLanguage = this.currentLanguage === 'en' ? 'fr' : 'en';
         console.log("Switching language to:", this.currentLanguage);
+        document.documentElement.lang = this.currentLanguage;
         import(`@/locales/${this.currentLanguage}.json`)
           .then(module => {
             this.items = module.default;
@@ -132,8 +134,7 @@
 </script>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"');
-  @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"');
+
 
   #app {
     min-height: 100vh;

@@ -64,7 +64,7 @@
 	  "icon": "downloadIcon",
 	  "hoverEffect": true,
 	  "clickable": true,
-	  "hasExpandedContent": true,
+	  "hasExpandedContent": false,
 	  "expanded": false,
 	  "downloadUrl": "/CV_EW_FR.pdf"
 	},

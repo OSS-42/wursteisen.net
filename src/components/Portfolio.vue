@@ -1,7 +1,7 @@
 <template>
 	<div class="portfolio-container">
 	  <div class="header-content">
-		<img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
+		<img src="@/assets/icons/perso2-expo.jpg" alt="Eric Wursteisen" class="profile-img">
 		<div class="text-content">
 		  <div class="portfolio-text">
 			<h2 class="paragraph">{{ localizedText.title }}</h2>
@@ -40,10 +40,10 @@
   import { Carousel, Slide, Navigation } from 'vue3-carousel';
   
   import projectImage1 from '@/assets/portfolio/pong.png';
-  import projectImage2 from '@/assets/portfolio/cube3D.png';
+  import projectImage2 from '@/assets/portfolio/cube3D.jpg';
   import projectImage3 from '@/assets/portfolio/minishell.png';
   import projectImage4 from '@/assets/portfolio/so_long.png';
-  import projectImage5 from '@/assets/portfolio/website1.png';
+  import projectImage5 from '@/assets/portfolio/website1.jpg';
   import projectImage6 from '@/assets/portfolio/github-portfolio.png';
   import gitIcon from '@/assets/icons/github.png';
   import webIcon from '@/assets/icons/www-click.png';

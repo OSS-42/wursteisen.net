@@ -18,8 +18,19 @@
 		this.$emit('close');
 		},
 		handleOverlayClick() {
-		this.closeModal();  // Call closeModal when the overlay is clicked
+		this.closeModal();
+		},
+		onKeydown(event) {
+			if (event.key === 'Escape' && this.isVisible) {
+				this.closeModal();
+			}
 		}
+	},
+	mounted() {
+		window.addEventListener('keydown', this.onKeydown);
+	},
+	beforeUnmount() {
+		window.removeEventListener('keydown', this.onKeydown);
 	}
 	};
 </script>

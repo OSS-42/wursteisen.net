@@ -31,3 +31,20 @@ npm run build
 ### Publish
 
 Push to `main`. GitHub Actions builds the site and rsyncs `dist/` to the droplet. Secrets live in the repo **Settings → Secrets and variables → Actions**, not in this file.
+
+### Update a job (OTA)
+
+Edit `src/content/work.json`:
+
+- Change `date`, `en`, or `fr` on an existing entry (e.g. Alithya).
+- To add a role: copy an object, set a new `id`, put logo file(s) in `src/assets/workXP/` named `{logo}.png`, and list those names in `"logos"`.
+
+LinkedIn URL and CV path: `src/content/site.json`.
+
+Then:
+
+```sh
+git add src/content src/assets/workXP
+git commit -m "Update work"
+git push origin main
+```

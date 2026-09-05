@@ -1,12 +1,15 @@
 <template>
     <div class="about-me-container">
         <div class="header-content">
-            <img src="@/assets/icons/perso2-expo.png" alt="Profile Image" class="profile-img">
+            <img src="@/assets/icons/perso2-expo.jpg" alt="Eric Wursteisen" class="profile-img">
             <div class="text-content">
                 <div class="about-me-text">
                     <h2 class="paragraph">{{ localizedText.title }}</h2>
                     <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
                     <p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
+                    <p class="linkedin">
+                      <a :href="linkedinUrl" rel="noopener noreferrer" target="_blank">{{ localizedText.linkedin }}</a>
+                    </p>
                 </div>
                 <div class="education">
                     <h2>{{ localizedText.title2 }}</h2>
@@ -28,6 +31,7 @@ import image42 from '@/assets/education/42.png';
 import imageEsiee from '@/assets/education/esiee.png';
 import imageUl from '@/assets/education/ul.png';
 import imagePmi from '@/assets/education/pmi.png';
+import site from '@/content/site.json';
 
 export default {
     name: 'AboutMe',
@@ -52,7 +56,8 @@ export default {
                     ],
                     action: [
                         "Click on a logo to discover more about an cursus."
-                    ]
+                    ],
+                    linkedin: "LinkedIn"
                 },
                 fr: {
                     title: "À propos d'Eric Wursteisen",
@@ -65,7 +70,8 @@ export default {
                     ],
                     action: [
                         "Cliquez sur un logo pour en savoir plus à propos d'un cursus."
-                    ]
+                    ],
+                    linkedin: "LinkedIn"
                 }
             },
             educations: [
@@ -116,6 +122,9 @@ export default {
     computed: {
         localizedText() {
             return this.translations[this.currentLanguage] || this.translations.en;
+        },
+        linkedinUrl() {
+            return site.linkedin
         }
     }
 }
@@ -198,6 +207,17 @@ export default {
         font-style: italic;
         font-weight: bold;
         text-align: center;
+    }
+
+    .linkedin {
+        margin-top: 8px;
+        text-align: left;
+    }
+
+    .linkedin a {
+        color: #fff;
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
     }
 
     @media (max-width: 600px) {
