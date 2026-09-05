@@ -41,8 +41,11 @@ function logoSrc(name) {
     const base = path.split('/').pop().replace(/\.[^.]+$/, '')
     return base === name || base.startsWith(name + '_')
   })
-  const svg = matches.find(([path]) => path.endsWith('.svg'))
-  return (svg || matches[0])?.[1] || ''
+  const exact = matches.find(([path]) => {
+    const base = path.split('/').pop().replace(/\.[^.]+$/, '')
+    return base === name
+  })
+  return (exact || matches[0])?.[1] || ''
 }
 
 export default {
@@ -118,16 +121,17 @@ export default {
     }
 
     .experiences {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 16px 12px;
+        align-items: end;
+        justify-items: center;
     }
 
     .experience {
-        margin-right: 20px;
-        margin-top: 10px;
         text-align: center;
         cursor: pointer;
+        width: 100%;
     }
 
     .experience-logos {
@@ -135,12 +139,15 @@ export default {
         align-items: center;
         justify-content: center;
         gap: 8px;
+        height: 40px;
     }
 
     .experience-logo {
-        max-width: 140px;
-        max-height: 40px;
-        height: auto;
+        height: 40px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        object-position: center;
     }
 
     .date-label {
@@ -187,6 +194,10 @@ export default {
 
         .text-content {
             width: 100%;
+        }
+
+        .experiences {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 </style>

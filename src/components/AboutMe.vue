@@ -1,15 +1,17 @@
 <template>
     <div class="about-me-container">
         <div class="header-content">
-            <img src="@/assets/icons/perso2-expo.jpg" alt="Eric Wursteisen" class="profile-img">
+            <div class="profile-col">
+                <img src="@/assets/icons/perso2-expo.jpg" alt="Eric Wursteisen" class="profile-img">
+                <a class="linkedin-link" :href="linkedinUrl" rel="noopener noreferrer" target="_blank" :aria-label="localizedText.linkedin">
+                    <img src="@/assets/icons/linkedin.svg" alt="" class="linkedin-logo">
+                </a>
+            </div>
             <div class="text-content">
                 <div class="about-me-text">
                     <h2 class="paragraph">{{ localizedText.title }}</h2>
                     <p v-for="(paragraph, index) in localizedText.paragraphs" :key="index">{{ paragraph }}</p>
                     <p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>
-                    <p class="linkedin">
-                      <a :href="linkedinUrl" rel="noopener noreferrer" target="_blank">{{ localizedText.linkedin }}</a>
-                    </p>
                 </div>
                 <div class="education">
                     <h2>{{ localizedText.title2 }}</h2>
@@ -172,8 +174,16 @@ export default {
 
 	.header-content {
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		width: 100%;
+	}
+
+	.profile-col {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: 20px;
+		flex-shrink: 0;
 	}
 
 	.profile-img {
@@ -181,7 +191,24 @@ export default {
 		height: 150px;
 		border-radius: 50%;
 		object-fit: cover;
-		margin-right: 20px;
+	}
+
+	.linkedin-link {
+		margin-top: 12px;
+		display: inline-flex;
+		background: transparent;
+		padding: 0;
+	}
+
+	.linkedin-link:hover {
+		background: transparent;
+		opacity: 0.8;
+	}
+
+	.linkedin-logo {
+		width: 36px;
+		height: 36px;
+		display: block;
 	}
 
 	.text-content {
@@ -209,17 +236,6 @@ export default {
         text-align: center;
     }
 
-    .linkedin {
-        margin-top: 8px;
-        text-align: left;
-    }
-
-    .linkedin a {
-        color: #fff;
-        text-decoration: underline;
-        text-underline-offset: 0.2em;
-    }
-
     @media (max-width: 600px) {
         .header-content {
             flex-direction: column;
@@ -227,12 +243,17 @@ export default {
             text-align: center;
         }
 
+        .profile-col {
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+
         .profile-img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            margin-bottom: 0;
             margin-right: 0;
         }
 
