@@ -31,17 +31,18 @@
 <script>
 import catalog from '@/content/work.json'
 
-const logoFiles = import.meta.glob('../assets/workXP/*.{png,jpg,jpeg,webp}', {
+const logoFiles = import.meta.glob('../assets/workXP/*.{png,jpg,jpeg,webp,svg}', {
   eager: true,
   import: 'default'
 })
 
 function logoSrc(name) {
-  const entry = Object.entries(logoFiles).find(([path]) => {
-    const file = path.split('/').pop()
-    return file === name + '.png' || file === name + '.jpg' || file === name + '.jpeg' || file === name + '.webp'
+  const matches = Object.entries(logoFiles).filter(([path]) => {
+    const base = path.split('/').pop().replace(/\.[^.]+$/, '')
+    return base === name || base.startsWith(name + '_')
   })
-  return entry ? entry[1] : ''
+  const svg = matches.find(([path]) => path.endsWith('.svg'))
+  return (svg || matches[0])?.[1] || ''
 }
 
 export default {

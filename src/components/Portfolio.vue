@@ -219,6 +219,10 @@
 	}
 
 	.projects {
+	--vc-nav-width: 56px;
+	--vc-nav-height: 56px;
+	--vc-nav-color: #fff;
+	--vc-nav-color-hover: #ddd;
 	margin-top: 10px;
 	font-family: Urbanist;
 	font-size: 15px;
@@ -269,10 +273,11 @@
 
 	.carousel__prev, .carousel__next {
 	color: white !important;
-	font-size: 30px !important;
-	/* background: rgba(0, 0, 0, 0.5) !important; */
+	font-size: 56px !important;
+	width: 56px !important;
+	height: 56px !important;
 	border: none !important;
-	padding: 10px !important;
+	padding: 0 !important;
 	}
 
 	.carousel__prev:hover, .carousel__next:hover {

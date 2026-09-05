@@ -30,7 +30,7 @@
     },
     {
       "id": "nurun-publicis",
-      "logos": ["nurun", "publicis"],
+      "logos": ["nurun"],
       "alt": "Nurun Service Conseil/Groupe Publicis",
       "date": "2014-2016",
       "en": [
@@ -100,7 +100,7 @@
     },
     {
       "id": "facilite-cgi",
-      "logos": ["facilite", "cgi"],
+      "logos": ["facilite"],
       "alt": "Facilité Informatique/CGI",
       "date": "2017-2019",
       "en": [
@@ -166,7 +166,7 @@
       "id": "alithya",
       "logos": ["alithya"],
       "alt": "Alithya",
-      "date": "2023-...",
+      "date": "2023-2025",
       "en": [
         "ALITHYA",
         "Back to the public sector by working for a ministry of the government of Quebec.",
@@ -178,6 +178,24 @@
         "Retour au public en travaillant pour un ministère du gouvernement du Québec.",
         "L'objectif principal de cette intervention est d'aider certaines équipes à monter en compétences quant à leurs pratiques agile.",
         "J'ai ensuite rejoint l'équipe Origin-A pour supporter des clients du privés pour l'implantation de vague de formations et de mise en place de pratiques agiles."
+      ]
+    },
+    {
+      "id": "crakmedia",
+      "logos": ["crakmedia"],
+      "alt": "Crakmedia",
+      "date": "2025-...",
+      "en": [
+        "CRAKMEDIA",
+        "I joined Crakmedia as head of agility and operational efficiency.",
+        "The mandate is broad: in less than three months I was already in strategy discussions to help reframe the organization's objectives.",
+        "After one year, I had put new workflows in place across the business units, giving us visibility — and therefore better control — over the organization's value streams."
+      ],
+      "fr": [
+        "CRAKMEDIA",
+        "J'ai rejoint Crakmedia comme responsable de l'agilité et de l'efficacité opérationnelle.",
+        "La mission est vaste, en moins de 3 mois je discute déjà stratégie pour aider à reformuler les objectifs organisationnels.",
+        "Après 1 an, j'ai mis en place de nouveaux workflows dans les unités d'affaires pour être en mesure d'avoir une vue et donc une meilleure maîtrise des flux de valeur de l'organisation."
       ]
     }
   ]
