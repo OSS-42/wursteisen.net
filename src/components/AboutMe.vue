@@ -174,7 +174,7 @@ export default {
 
 	.header-content {
 		display: flex;
-		align-items: flex-start;
+		align-items: center;
 		width: 100%;
 	}
 
