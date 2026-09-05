@@ -16,7 +16,10 @@
         <template v-slot:line3>{{ item.line3 }}</template>
       </Card>
     </div>
-    <ExpandingTile :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent" @close="closeModal">
+    <ExpandingTile
+      :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent"
+      :fit-content="expandedFitsContent"
+      @close="closeModal">
       <component :is="currentComponent" :current-language="currentLanguage" v-if="currentComponent"></component>
     </ExpandingTile>
     <footer class="app-footer">Made by Eric Wursteisen</footer>
@@ -72,6 +75,10 @@
           ...item,
           icon: iconMap[item.icon]
         }));
+      },
+      expandedFitsContent() {
+        const item = this.items[this.expandedIndex]
+        return !!(item && item.componentName === 'Portfolio')
       }
     },
     methods: {
