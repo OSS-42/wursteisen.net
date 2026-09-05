@@ -53,8 +53,8 @@ export default {
                     paragraphs: [
                         "Before 2012, I used to help entrepreneurs establishing their business models...",
                         "When I started as an IT Project Manager it was obvious to me that I wasn't of the traditional kind...",
-                        "Fast forward 7 years, and here I am, an Agile Coach...",
-                        "However, at this stage of my career, I am also ready to share my knowledge...",
+                        "I quickly progressed and became an Agile Coach in 2016...",
+                        "Today, considering my current stage in my career, I love to share my knowledge.",
                     ],
                     action: [
                         "Click on a logo to discover more about an cursus."
@@ -67,8 +67,8 @@ export default {
                     paragraphs: [
                         "Avant 2012, j'aidais les entrepreneurs à établir leurs modèles d'affaires...",
                         "Lorsque j'ai commencé en tant que chef de projet informatique, il était évident pour moi que je n'étais pas du genre traditionnel...",
-                        "Avance rapide de 7 ans, et me voici, coach Agile...",
-                        "Cependant, à ce stade de ma carrière, je suis également prêt à partager mes connaissances...",
+                        "J'ai rapidement progressé et suis devenu coach Agile dès 2016...",
+                        "Aujourd'hui, au stade actuel de ma carrière, j'aime partager mes connaissances.",
                     ],
                     action: [
                         "Cliquez sur un logo pour en savoir plus à propos d'un cursus."
