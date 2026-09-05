@@ -1,12 +1,12 @@
 <template>
 	<div class="work-xp-container">
 	  <div class="header-content">
-		<img src="@/assets/icons/perso2-expo.jpg" alt="Profile Image" class="profile-img">
-		<div class="text-content">
+		<img src="@/assets/icons/perso2-expo.jpg" alt="Eric Wursteisen" class="profile-img">
 		  <div class="work-text">
 			<h2 class="paragraph">{{ localizedText.title }}</h2>
             <p class="action">{{ localizedText.action }}</p>
 		  </div>
+	  </div>
 		  <div class="experiences">
 			<div v-for="work in experiences" :key="work.id"
 				 class="experience"
@@ -18,13 +18,11 @@
 			</div>
 		  </div>
 		  <div v-if="visibleWork" class="work-description">
-			<p v-for="(desc, index) in visibleWork[currentLanguage]" :key="index">
-                <span v-if="index === 0"><h2>{{ desc }}</h2></span>
-                <span v-else>{{ desc }}</span>
-            </p>
+			<template v-for="(desc, index) in visibleWork[currentLanguage]" :key="index">
+                <h2 v-if="index === 0">{{ desc }}</h2>
+                <p v-else>{{ desc }}</p>
+            </template>
 		  </div>
-		</div>
-	  </div>
     </div>
 </template>
 
@@ -97,6 +95,7 @@ export default {
         display: flex;
         align-items: center;
         width: 100%;
+        gap: 20px;
     }
 
     .profile-img {
@@ -104,13 +103,7 @@ export default {
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        margin-right: 20px;
-    }
-
-    .text-content {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
+        flex-shrink: 0;
     }
 
     .work-text, .experiences, .work-description {
@@ -120,12 +113,17 @@ export default {
         margin-top: 10px;
     }
 
+    .work-text {
+        flex: 1;
+    }
+
     .experiences {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 16px 12px;
         align-items: end;
         justify-items: center;
+        width: 100%;
     }
 
     .experience {
@@ -190,10 +188,6 @@ export default {
             object-fit: cover;
             margin-bottom: 20px;
             margin-right: 0;
-        }
-
-        .text-content {
-            width: 100%;
         }
 
         .experiences {

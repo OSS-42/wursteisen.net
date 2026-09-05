@@ -44,19 +44,21 @@
 	bottom: 0;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 	visibility: hidden;
 	opacity: 0;
 	pointer-events: none;
 	transition: opacity 0.5s ease;
 	z-index: 10;
 	background-color: rgba(0, 0, 0, 0.5);
-	overflow: auto;
+	padding: 20px;
+	box-sizing: border-box;
   }
   
   .modal-content {
 	position: relative;
-	margin: 20px 0;
+	width: min(920px, 100%);
+	height: min(680px, 100%);
 	background: linear-gradient(to right, #180353, #295ff4);
 	border-radius: 5px;
 	padding: 20px;
@@ -67,6 +69,7 @@
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	z-index: 11;
 	overflow: auto;
+	box-sizing: border-box;
   }
   
   .close-btn {
