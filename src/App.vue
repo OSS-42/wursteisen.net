@@ -18,7 +18,6 @@
     </div>
     <ExpandingTile
       :is-visible="expandedIndex !== -1 && items[expandedIndex].hasExpandedContent"
-      :fit-content="expandedFitsContent"
       @close="closeModal">
       <component :is="currentComponent" :current-language="currentLanguage" v-if="currentComponent"></component>
     </ExpandingTile>
@@ -75,10 +74,6 @@
           ...item,
           icon: iconMap[item.icon]
         }));
-      },
-      expandedFitsContent() {
-        const item = this.items[this.expandedIndex]
-        return !!(item && item.componentName === 'Portfolio')
       }
     },
     methods: {

@@ -12,7 +12,14 @@
 				 class="experience"
 				 @click="toggleVisibility(work)">
 			  <div class="experience-logos">
-				<img v-for="src in work.logoSrcs" :key="src" :src="src" :alt="work.alt" class="experience-logo">
+				<img
+				  v-for="src in work.logoSrcs"
+				  :key="src"
+				  :src="src"
+				  :alt="work.alt"
+				  class="experience-logo"
+				  :class="{ 'is-wide': work.id === 'crakmedia' }"
+				>
 			  </div>
 			  <span class="date-label">{{ work.date }}</span>
 			</div>
@@ -137,15 +144,20 @@ export default {
         align-items: center;
         justify-content: center;
         gap: 8px;
-        height: 40px;
+        min-height: 40px;
+        height: 48px;
     }
 
     .experience-logo {
         height: 40px;
         width: auto;
-        max-width: 100%;
+        max-width: none;
         object-fit: contain;
         object-position: center;
+    }
+
+    .experience-logo.is-wide {
+        height: 56px;
     }
 
     .date-label {

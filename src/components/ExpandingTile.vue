@@ -1,6 +1,6 @@
 <template>
 	<div class="modal" :class="{ 'visible': isVisible }" @click="handleOverlayClick">
-	  <div class="modal-content" :class="{ 'fit-content': fitContent }" @click.stop>
+	  <div class="modal-content" @click.stop>
 		<button class="close-btn" @click="closeModal">&times;</button>
 		<slot></slot>
 	  </div>
@@ -11,8 +11,7 @@
 	export default {
 	name: "expandingTile",
 	props: {
-		isVisible: Boolean,
-		fitContent: Boolean
+		isVisible: Boolean
 	},
 	methods: {
 		closeModal() {
@@ -59,7 +58,8 @@
   .modal-content {
 	position: relative;
 	width: min(920px, 100%);
-	height: min(680px, 100%);
+	height: auto;
+	max-height: calc(100vh - 40px);
 	background: linear-gradient(to right, #180353, #295ff4);
 	border-radius: 5px;
 	padding: 20px;
@@ -71,11 +71,6 @@
 	z-index: 11;
 	overflow: auto;
 	box-sizing: border-box;
-  }
-
-  .modal-content.fit-content {
-	height: auto;
-	max-height: min(680px, 100%);
   }
   
   .close-btn {
