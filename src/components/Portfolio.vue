@@ -9,14 +9,20 @@
 			<p class="action" v-for="(action, index) in localizedText.action" :key="index">{{ action }}</p>  
 		  </div>
 		  <div class="projects">
-			<Carousel :items-to-show="1" :mouse-drag="true" :wrap-around="true" :class="{ 'carousel-hidden': !isCarouselVisible }">
-			  <Slide v-for="(project, index) in projects" :key="index">
+			<Carousel
+			  v-if="isCarouselVisible"
+			  :items-to-show="1"
+			  :mouse-drag="true"
+			  :wrap-around="false"
+			  :transition="300"
+			>
+			  <Slide v-for="(project, index) in projects" :key="project.alt">
 				<div class="project-slide">
 				  <img :src="project.img" :alt="project.alt" class="project-img" @click="toggleZoom(project.img)">
-				  <a :href="project.link" target="_blank">
+				  <a :href="project.link" target="_blank" rel="noopener noreferrer">
 					<div class="project-title">
 						<p>{{ project.alt }}</p>
-						<img :src="project.icon" alt="Link Icon" class="project-link-icon">
+						<img :src="project.icon" alt="" class="project-link-icon">
 					</div>
                   </a>
 				  <p class="project-description">{{ project.description[currentLanguage] }}</p>
@@ -163,14 +169,13 @@
 		this.zoomed = !this.zoomed;
 		this.zoomedImageSrc = this.zoomed ? imgSrc : '';
 	  },
-	  showCarousel() {
-    	this.isCarouselVisible = true;
-		}
-	  },
-	  mounted() {
+	},
+	mounted() {
 		this.$nextTick(() => {
-			this.showCarousel();
-	    });
+			requestAnimationFrame(() => {
+				this.isCarouselVisible = true;
+			});
+		});
 	},
 	computed: {
 	  localizedText() {
@@ -217,6 +222,10 @@
 	margin-top: 10px;
 	font-family: Urbanist;
 	font-size: 15px;
+	width: min(100%, 420px);
+	min-height: 320px;
+	margin-left: auto;
+	margin-right: auto;
 	}
 
 	.project-description {
@@ -303,9 +312,7 @@
 		cursor: pointer;
 	}
 
-	.carousel-hidden {
-		visibility: hidden;
-	}
+
 
 	@media (max-width: 600px) {
         .header-content {

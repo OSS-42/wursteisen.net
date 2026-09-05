@@ -117,6 +117,7 @@
       },
       closeModal() {
         this.expandedIndex = -1;
+        this.currentComponent = null;
       },
       switchLanguage() {
         this.currentLanguage = this.currentLanguage === 'en' ? 'fr' : 'en';
